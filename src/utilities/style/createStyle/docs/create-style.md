@@ -2,37 +2,37 @@
 
 ## Usage 🔌
 
-~~~js
+```js
 import { createStyleFromObject } from 'styled-velocity'
-~~~
+```
 
 ## Examples
 
-~~~js
+```js
 const styleObject = {
-	color: neutralColors.darkerInk,
-	'font-family': typeVars.fontFamily.eina03,
-	'font-weight': 300,
-	'font-size': {
-		'0-799': { min: 48, max: 64 },
-		'800-1599': { min: 64, max: 124 },
-		'1600-1999': { min: 124, max: 156 },
-		2000: '28px'
-	}
+  color: 'black',
+  'font-family': 'Arial',
+  'font-weight': 300,
+  'font-size': {
+    '0-799': { min: 48, max: 64 },
+    '800-1599': { min: 64, max: 124 },
+    '1600-1999': { min: 124, max: 156 },
+    2000: '28px',
+  },
 }
 
 const myDiv = styled.div`
-	${createStyleFromObject(styleObject)}
+  ${createStyleFromObject(styleObject)}
 `
-~~~
+```
 
 If you want to be scale values from start to finish, you can use `createStyleFromTo` to achieve the same thing, but less value input
 
-~~~js
+```js
 import { createStyleFromTo } from 'styled-velocity'
-~~~
+```
 
-~~~js
+```js
 const styleObject = {
 
 	// this is the same as...
@@ -53,4 +53,4 @@ const styleObject = {
 		})
 	}
 }
-~~~
+```
