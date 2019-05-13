@@ -1,0 +1,79 @@
+{
+  "name": "styled-velocity",
+  "version": "0.0.1",
+  "description": "Styled-Velocity, a React-based styled prop and UI library to increase your velocity and help build your Design System.",
+  "author": "jonkwheeler",
+  "license": "ISC",
+  "main": "dist/index",
+  "types": "dist/index",
+  "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jonkwheeler/styled-velocity.git"
+  },
+  "publishConfig": {
+    "scope": "jonkwheeler",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "config": {
+    "dirBuild": "./dist",
+    "dirSrc": "./src"
+  },
+  "scripts": {
+    "build:commonjs": "yarn nuke:commonjs && cross-env NODE_ENV=production BABEL_ENV=commonjs babel $npm_package_config_dirSrc --out-dir $npm_package_config_dirBuild --extensions \".ts,.tsx,.js,.jsx\" --ignore \"**/*.test.js\",\"test.js\",\"**/test\",\"**/*.md\",\"**/docs\",*/node_modules/styled-components --source-maps inline",
+    "build:export-indexes": "node ./scripts/exportIndexes.js",
+    "build:export-src-index": "node ./scripts/exportSrcIndex.js",
+    "build:types": "tsc --project tsconfig.types.json && tscpaths --project tsconfig.types.json --src $npm_package_config_dirSrc",
+    "build:variable-exports": "yarn build:export-src-index && yarn build:export-indexes",
+    "build": "yarn build:variable-exports && yarn build:commonjs && yarn build:types",
+    "nuke:all:install:dev": "yarn nuke:all && yarn && yarn dev",
+    "nuke:all:install": "yarn nuke:all && yarn",
+    "nuke:all": "rm -rf node_modules .cache $npm_package_config_dirBuild yarn.lock yarn-error.log package-lock.json",
+    "nuke:build:rebuild": "yarn nuke:build && yarn build",
+    "nuke:build": "rm -rf $npm_package_config_dirBuild",
+    "nuke:commonjs": "rm -rf $npm_package_config_dirBuild",
+    "prepublishOnly": "yarn nuke:build:rebuild",
+    "release": "yarn release-it"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/cli": "^7.1.5",
+    "@babel/core": "^7.4.4",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/plugin-proposal-export-default-from": "^7.2.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
+    "@babel/plugin-transform-runtime": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-typescript": "^7.3.3",
+    "@babel/runtime": "^7.4.4",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.5",
+    "babel-plugin-add-react-displayname": "^0.0.5",
+    "babel-plugin-module-resolver": "^3.2.0",
+    "cross-env": "^5.2.0",
+    "eslint": "^5.9.0",
+    "eslint-plugin-react": "^7.13.0",
+    "fs": "^0.0.1-security",
+    "glob": "^7.1.4",
+    "lodash.concat": "^4.5.0",
+    "microbundle": "^0.11.0",
+    "path": "^0.12.7",
+    "prettier": "^1.17.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "release-it": "^12.0.1",
+    "styled-components": "^4.2.0",
+    "ts-loader": "^6.0.0",
+    "tscpaths": "^0.0.7",
+    "tslint": "^5.16.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-eslint-rules": "^5.4.0",
+    "typescript": "^3.4.5",
+    "webpack": "^4.31.0"
+  },
+  "peerDependencies": {
+    "styled-components": ">= 4"
+  }
+}

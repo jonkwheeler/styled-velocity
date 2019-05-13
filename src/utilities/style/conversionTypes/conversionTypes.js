@@ -1,0 +1,44 @@
+import { isString, isNumber, isBoolean } from '@utils'
+
+/*
+ * Add additional conversion types here
+ */
+export const getColumnWidth = itemCount => `${parseFloat((100 / itemCount).toFixed(4))}%`
+
+export const booleanToIntString = value => `${+value}`
+
+// export const getCells = cells => `calc(${parseFloat((cells * 2.5).toFixed(4))}vw - ${0.375 * cells}px)`
+export const getCells = cells => `${parseFloat((cells * 2.5).toFixed(4))}vw`
+
+/*
+ * if you entered 0, return 0, else
+ * if you enter a prop where it's value is less than or equal to 1,
+ * it assumes you're making a percentage and creates one, otherwise it'll assume it's a pixel value if above 1
+ */
+
+export const percentageOrPixel = value =>
+  value === 0 ? value : value <= 1 && value >= 0 ? `${parseFloat((value * 100).toFixed(4))}%` : `${value}px`
+
+export const getFlexProperty = property => {
+  if (property === 'top' || property === 'left' || property === 'start') return 'flex-start'
+  else if (property === 'bottom' || property === 'right' || property === 'end') return 'flex-end'
+  else if (property === 'middle') return 'center'
+  else return property
+}
+
+export const getCellTranslate = ({ x, y }) =>
+  `translate(${x ? (isString(x) ? x : getCells(x)) : 0}, ${y ? (isString(y) ? y : getCells(y)) : 0})`
+
+export const toCellsMax = val => val * 50 + 'px'
+
+/*
+ * Check for the correct type first
+ */
+export const conversionTypes = {
+  getColumnWidth: value => (isNumber(value) ? getColumnWidth(value) : value),
+  booleanToIntString: value => (isBoolean(value) ? booleanToIntString(value) : value),
+  getCells: value => (isNumber(value) ? getCells(value) : value),
+  getFlexProperty: value => (isString(value) ? getFlexProperty(value) : value),
+  percentageOrPixel: value => (isNumber(value) ? percentageOrPixel(value) : value),
+  getCellTranslate: getCellTranslate,
+}
