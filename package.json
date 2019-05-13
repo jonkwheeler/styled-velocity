@@ -9,7 +9,7 @@
   "sideEffects": false,
   "repository": {
     "type": "git",
-    "url": "https://github.com/jonkwheeler/styled-velocity.git"
+    "url": "git+https://github.com/jonkwheeler/styled-velocity.git"
   },
   "publishConfig": {
     "scope": "jonkwheeler",
@@ -75,5 +75,18 @@
   },
   "peerDependencies": {
     "styled-components": ">= 4"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/jonkwheeler/styled-velocity/issues"
+  },
+  "homepage": "https://github.com/jonkwheeler/styled-velocity#readme",
+  "keywords": [
+    "react",
+    "styled-components",
+    "ui",
+    "design",
+    "system",
+    "styled",
+    "props"
+  ]
 }
