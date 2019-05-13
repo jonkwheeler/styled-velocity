@@ -2,7 +2,25 @@
 
 Styled-Velocity, a React-based styled prop and UI library to increase your velocity and help build your Design System.
 
+## Install
+
+```js
+yarn add styled-velocity
+```
+
+or
+
+```js
+npm install styled-velocity
+```
+
 ## sharedProps
+
+Import example:
+
+```js
+import { appearanceProps, cssProps, dimensionProps } from 'styled-velocity'
+```
 
 - Overview - [docs](https://github.com/jonkwheeler/styled-velocity/blob/master/src/shared-props/docs/shared-props.md)
 
@@ -10,10 +28,16 @@ Styled-Velocity, a React-based styled prop and UI library to increase your veloc
 
 **All of the following have access to the sharedProps.**
 
-- Element - [docs](https://github.com/jonkwheeler/styled-velocity/blob/master/src/components/Element/docs/element.md)
-- Flex - [docs](https://github.com/jonkwheeler/styled-velocity/blob/master/src/components/Flex/docs/flex.md)
-- Main - [docs](https://github.com/jonkwheeler/styled-velocity/blob/master/src/components/Main/docs/main.md)
-- Section - [docs](https://github.com/jonkwheeler/styled-velocity/blob/master/src/components/Section/docs/section.md)
+Import example:
+
+```js
+import { Element } 'styled-velocity'
+```
+
+- `Element` - [docs](https://github.com/jonkwheeler/styled-velocity/blob/master/src/components/Element/docs/element.md)
+- `Flex` - [docs](https://github.com/jonkwheeler/styled-velocity/blob/master/src/components/Flex/docs/flex.md)
+- `Main` - [docs](https://github.com/jonkwheeler/styled-velocity/blob/master/src/components/Main/docs/main.md)
+- `Section` - [docs](https://github.com/jonkwheeler/styled-velocity/blob/master/src/components/Section/docs/section.md)
 
 ## createStyle
 
