@@ -67,3 +67,6 @@ export { cssProperty } from './utilities/style/createStyle/cssProperty'
 export { getPropertiesFromTo } from './utilities/style/createStyle/getPropertiesFromTo'
 export { makeMediaQuery } from './utilities/style/createStyle/makeMediaQuery'
 export { scalePxValues } from './utilities/style/createStyle/scalePxValues'
+
+/* Config */
+export { config } from './config/config'

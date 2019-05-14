@@ -1,4 +1,5 @@
-import { dirname, resolve } from 'path'
+const fs = require('fs')
+const path = require('path')
 
 const defaultConfig = {
   gridCells: 40,
@@ -6,9 +7,22 @@ const defaultConfig = {
   classNamePrefix: '_sv__',
 }
 
-const rootConfig = resolve(dirname('.svconfig.js')) || {}
+let rootConfig = {}
+
+const pathName = '.svconfig.js'
+
+const file = path.resolve(path.join(__dirname, pathName))
+
+try {
+  if (fs.existsSync(file)) {
+    // file exists
+    rootConfig = require(file)
+  }
+} catch (err) {
+  console.error(err)
+}
 
 export const config = {
-  ...rootConfig,
   ...defaultConfig,
+  ...rootConfig,
 }
