@@ -10,20 +10,27 @@ export { Section } from './components/Section'
 
 /* Shared props for styled-components */
 export { appearanceProps } from './shared-props/appearanceProps'
+export { appearancePropsAvailable } from './shared-props/appearancePropsAvailable'
 export { cssProps } from './shared-props/cssProps'
 export { dimensionProps } from './shared-props/dimensionProps'
+export { dimensionPropsAvailable } from './shared-props/dimensionPropsAvailable'
 export { displayMode } from './shared-props/displayMode'
 export { flexProps } from './shared-props/flexProps'
+export { flexPropsAvailable } from './shared-props/flexPropsAvailable'
 export { gridLines } from './shared-props/gridLines'
 export { growShrinkProps } from './shared-props/growShrinkProps'
+export { growShrinkPropsAvailable } from './shared-props/growShrinkPropsAvailable'
 export { positionProps } from './shared-props/positionProps'
+export { positionPropsAvailable } from './shared-props/positionPropsAvailable'
 export { textProps } from './shared-props/textProps'
+export { textPropsAvailable } from './shared-props/textPropsAvailable'
 
 /* Shared propTypes */
 export { ChildrenPropTypes } from './prop-types/ChildrenPropTypes'
 export { ClassNamePropTypes } from './prop-types/ClassNamePropTypes'
 export { ElementPropTypes } from './prop-types/ElementPropTypes'
 export { IdPropTypes } from './prop-types/IdPropTypes'
+export { PropsAvailablePropTypes } from './prop-types/PropsAvailablePropTypes'
 export { RolePropTypes } from './prop-types/RolePropTypes'
 export { SharedPropsPropTypes } from './prop-types/SharedPropsPropTypes'
 

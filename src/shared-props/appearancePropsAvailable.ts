@@ -1,6 +1,3 @@
-import { css } from 'styled-components'
-import { createStyle } from '@utils'
-
 export const appearancePropsAvailable = [
   {
     prop: 'bg',
@@ -23,10 +20,3 @@ export const appearancePropsAvailable = [
     property: 'box-shadow',
   },
 ]
-
-export const appearanceProps = css`
-  ${props =>
-    appearancePropsAvailable.map(
-      ({ prop, property }) => props[prop] && createStyle({ property: property, value: props[prop] }),
-    )};
-`

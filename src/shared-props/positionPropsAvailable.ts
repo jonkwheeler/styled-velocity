@@ -1,6 +1,3 @@
-import { css } from 'styled-components'
-import { createStyle, convertValue, isNullOrUndefined } from '@utils'
-
 // t: top
 // b: bottom
 // l: left
@@ -99,20 +96,3 @@ export const positionPropsAvailable = [
   ...cellDirectionPropsAvailable,
   ...layerPropsAvailable,
 ]
-
-export const positionProps = css`
-  ${props =>
-    positionPropsAvailable.map(({ prop, property, propertyTwo, propertyThree, conversionType }) => {
-      if (isNullOrUndefined(props[prop])) return
-      const value = conversionType ? convertValue(props[prop], conversionType) : props[prop]
-
-      let style = createStyle({ property: property, value: value })
-
-      /*
-       * See if there's a second or third prop, EG: mx: margin-left and margin-right
-       */
-      if (propertyTwo) style += createStyle({ property: propertyTwo, value: value })
-      if (propertyThree) style += createStyle({ property: propertyThree, value: value })
-      return style
-    })};
-`

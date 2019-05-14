@@ -1,6 +1,3 @@
-import { css } from 'styled-components'
-import { createStyle, convertValue, isNullOrUndefined } from '@utils'
-
 // m: margin
 // mt: margin-top
 // mr: margin-right
@@ -239,30 +236,9 @@ const boundingBoxPropsAvailable = [
   },
 ]
 
-export const dimensionsPropsAvailable = [
+export const dimensionPropsAvailable = [
   ...boundingBoxPropsAvailable,
   ...marginPropsAvailable,
   ...paddingPropsAvailable,
   ...cellPropsAvailable,
 ]
-
-export const dimensionProps = css`
-  ${props => props.centered && 'margin: auto;'};
-  ${props => props.fullscreen && 'height: 100vh; @media (max-height: 568px){ height: 568px; }'};
-  ${props => props.noMargin && 'margin: 0;'};
-
-  ${props =>
-    dimensionsPropsAvailable.map(({ prop, property, propertyTwo, propertyThree, conversionType }) => {
-      if (isNullOrUndefined(props[prop])) return
-      const value = conversionType ? convertValue(props[prop], conversionType) : props[prop]
-
-      let style = createStyle({ property: property, value: value })
-
-      /*
-       * See if there's a second or third prop, EG: mx: margin-left and margin-right
-       */
-      if (propertyTwo) style += createStyle({ property: propertyTwo, value: value })
-      if (propertyThree) style += createStyle({ property: propertyThree, value: value })
-      return style
-    })};
-`
