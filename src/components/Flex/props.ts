@@ -13,6 +13,4 @@ export interface FlexProps
     ElementPropTypes,
     IdPropTypes,
     RolePropTypes,
-    SharedPropsPropTypes {
-  itemCount?: number
-}
+    SharedPropsPropTypes {}
