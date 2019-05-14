@@ -23,7 +23,6 @@ export const StyledFlex = styled.div`
   > * {
     position: relative;
     max-width: 100%;
-    margin: 0;
 
     ${growShrinkProps};
     ${props =>
