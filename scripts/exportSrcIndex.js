@@ -39,6 +39,10 @@ function init() {
       title: 'Utilities',
       files: glob.sync('./src/utilities/**/*.{js,ts}').filter(removeUnwanted),
     },
+    {
+      title: 'Config',
+      files: glob.sync('./src/config/**/*.{js,ts}').filter(removeUnwanted),
+    },
   ]
 
   let srcIndexStr =

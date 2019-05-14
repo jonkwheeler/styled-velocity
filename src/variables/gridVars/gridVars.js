@@ -1,12 +1,14 @@
+import { config } from '@config'
+
 export const gridVars = {
-  cells: 40,
+  cells: config.gridCells,
   get cellSize() {
-    return (100 / this.cells).toFixed(3)
+    return parseFloat((100 / this.cells).toFixed(3))
   },
   get cellSizeCss() {
     return this.cellSize + 'vw'
   },
-  maxCellSize: 50,
+  maxCellSize: parseFloat(config.sectionMaxWidth / config.gridCells),
   get maxCellSizeCss() {
     return this.maxCellSize + 'px'
   },

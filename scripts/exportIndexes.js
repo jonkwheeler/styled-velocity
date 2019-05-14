@@ -62,6 +62,14 @@ function init() {
       },
       exportPath: './src/prop-types/index.ts',
     },
+    {
+      title: '@config',
+      files: glob.sync('./src/config/*.{js,ts}').filter(removeUnwanted),
+      stringReturn: function(name, dir) {
+        return `export { ${name} } from '${dir.replace('/src/config', '')}/${name}'\n`
+      },
+      exportPath: './src/config/index.ts',
+    },
   ]
 
   folders.forEach(({ title, files, stringReturn, exportPath }) => {
