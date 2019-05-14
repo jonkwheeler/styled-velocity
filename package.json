@@ -54,7 +54,6 @@
     "cross-env": "^5.2.0",
     "eslint": "^5.9.0",
     "eslint-plugin-react": "^7.13.0",
-    "fs": "^0.0.1-security",
     "glob": "^7.1.4",
     "path": "^0.12.7",
     "prettier": "^1.17.0",

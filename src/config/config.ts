@@ -1,5 +1,5 @@
-const fs = require('fs')
-const path = require('path')
+// const fs = require('fs')
+// const path = require('path')
 
 const defaultConfig = {
   gridCells: 40,
@@ -7,20 +7,20 @@ const defaultConfig = {
   classNamePrefix: '_sv__',
 }
 
-let rootConfig = {}
+const rootConfig = {}
 
-const pathName = '.svconfig.js'
+// const pathName = '.svconfig.js'
 
-const file = path.resolve(path.join(__dirname, pathName))
+// const file = path.resolve(path.join(__dirname, pathName))
 
-try {
-  if (fs.existsSync(file)) {
-    // file exists
-    rootConfig = require(file)
-  }
-} catch (err) {
-  console.error(err)
-}
+// try {
+//   if (fs.existsSync(file)) {
+//     // file exists
+//     rootConfig = require(file)
+//   }
+// } catch (err) {
+//   console.error(err)
+// }
 
 export const config = {
   ...defaultConfig,
