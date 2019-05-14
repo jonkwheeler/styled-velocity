@@ -20,10 +20,12 @@ export { positionProps } from './shared-props/positionProps'
 export { textProps } from './shared-props/textProps'
 
 /* Shared propTypes */
-export { childrenPropTypes } from './prop-types/childrenPropTypes'
-export { classNamePropTypes } from './prop-types/classNamePropTypes'
-export { elementPropTypes } from './prop-types/elementPropTypes'
-export { idRequiredPropTypes } from './prop-types/idRequiredPropTypes'
+export { ChildrenPropTypes } from './prop-types/ChildrenPropTypes'
+export { ClassNamePropTypes } from './prop-types/ClassNamePropTypes'
+export { ElementPropTypes } from './prop-types/ElementPropTypes'
+export { IdPropTypes } from './prop-types/IdPropTypes'
+export { RolePropTypes } from './prop-types/RolePropTypes'
+export { SharedPropsPropTypes } from './prop-types/SharedPropsPropTypes'
 
 /* Variables */
 export { gridVars } from './variables/gridVars/gridVars'

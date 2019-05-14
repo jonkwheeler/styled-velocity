@@ -1,7 +1,9 @@
 /* This file is automated via "./scripts/exportIndexes.js". Do not manually edit. */
 
 /* @propTypes */
-export { childrenPropTypes } from './childrenPropTypes'
-export { classNamePropTypes } from './classNamePropTypes'
-export { elementPropTypes } from './elementPropTypes'
-export { idRequiredPropTypes } from './idRequiredPropTypes'
+export { ChildrenPropTypes } from './ChildrenPropTypes'
+export { ClassNamePropTypes } from './ClassNamePropTypes'
+export { ElementPropTypes } from './ElementPropTypes'
+export { IdPropTypes } from './IdPropTypes'
+export { RolePropTypes } from './RolePropTypes'
+export { SharedPropsPropTypes } from './SharedPropsPropTypes'

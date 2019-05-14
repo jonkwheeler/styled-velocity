@@ -1,23 +1,23 @@
-import * as React from 'react'
-import { StyledFlex } from './styled'
-import { Box } from './Box'
 import { classNames } from '@utils'
-import { flexProps } from './props'
+import * as React from 'react'
+import { Box } from './Box'
+import { FlexProps } from './props'
+import { StyledFlex } from './styled'
 
 export const Flex = ({
-  align,
-  autoWidthColumns,
+  align = 'left',
+  autoWidthColumns = false,
   children,
   className,
   columns,
-  componentClassName,
-  direction,
-  element,
-  valign,
+  componentClassName = 'flex',
+  direction = 'row',
+  element = 'div',
+  valign = 'top',
   valignContent,
-  wrap,
+  wrap = 'wrap',
   ...rest
-}) =>
+}: FlexProps) =>
   React.createElement(
     StyledFlex,
     {
@@ -30,7 +30,7 @@ export const Flex = ({
       wrap,
       itemCount: React.Children.count(children),
       autoWidthColumns: columns === undefined && autoWidthColumns,
-      columns: columns,
+      columns,
       get columnCount() {
         return this.autoWidth ? this.itemCount : this.columns
       },
@@ -41,15 +41,3 @@ export const Flex = ({
 
 Flex.Item = Box
 Flex.Box = Box
-
-Flex.defaultProps = {
-  align: 'left',
-  autoWidthColumns: false,
-  componentClassName: 'flex',
-  direction: 'row',
-  element: 'div',
-  valign: 'top',
-  wrap: 'wrap',
-}
-
-Flex.propTypes = flexProps

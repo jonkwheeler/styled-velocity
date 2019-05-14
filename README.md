@@ -114,8 +114,7 @@ import { Element } 'styled-velocity'
 | ""                | `cy`            | `ct` and `cb`              | ""                 |
 | ""                | `position`      | position                   |                    |
 | ""                | `z`             | z-index                    |                    |
-| `textProps`       | `z`             | z-index                    |                    |
-| ""                | `color`         | color                      |                    |
+| `textProps`       | `color`         | color                      |                    |
 | ""                | `textAlign`     | text-align                 |                    |
 | ""                | `textTransform` | text-transform             |                    |
 | ""                | `fontFamily`    | font-family                |                    |
