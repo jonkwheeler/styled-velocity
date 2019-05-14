@@ -1,8 +1,16 @@
-import { ChildrenPropTypes, ClassNamePropTypes, ElementPropTypes, IdPropTypes, RolePropTypes } from '@propTypes'
+import {
+  ChildrenPropTypes,
+  ClassNamePropTypes,
+  ElementPropTypes,
+  IdPropTypes,
+  RolePropTypes,
+  SharedPropsPropTypes,
+} from '@propTypes'
 
 export interface MainProps
   extends ChildrenPropTypes,
     ClassNamePropTypes,
     ElementPropTypes,
     IdPropTypes,
-    RolePropTypes {}
+    RolePropTypes,
+    SharedPropsPropTypes {}
