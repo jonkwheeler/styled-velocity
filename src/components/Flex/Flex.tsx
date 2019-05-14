@@ -32,7 +32,7 @@ export const Flex = ({
       autoWidthColumns: columns === undefined && autoWidthColumns,
       columns,
       get columnCount() {
-        return this.autoWidth ? this.itemCount : this.columns
+        return this.autoWidthColumns ? this.itemCount : this.columns
       },
       ...rest,
     },
