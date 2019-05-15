@@ -7,4 +7,5 @@ export interface ElementProps extends SharedPropsPropTypes, React.HTMLAttributes
   className?: string
   element?: string
   role?: string
+  id?: string
 }
