@@ -1,4 +1,3 @@
-import { classNames } from '@utils'
 import * as React from 'react'
 import { Box } from './Box'
 import { FlexProps } from './props'
@@ -10,7 +9,6 @@ export const Flex = ({
   children,
   className,
   columns,
-  componentClassName = 'flex',
   direction = 'row',
   element = 'div',
   valign = 'top',
@@ -22,7 +20,7 @@ export const Flex = ({
     StyledFlex,
     {
       as: element,
-      className: classNames(componentClassName, className),
+      className,
       align,
       valign,
       valignContent,
