@@ -26,12 +26,7 @@ export { textProps } from './shared-props/textProps'
 export { textPropsAvailable } from './shared-props/textPropsAvailable'
 
 /* Shared propTypes */
-export { ChildrenPropTypes } from './prop-types/ChildrenPropTypes'
-export { ClassNamePropTypes } from './prop-types/ClassNamePropTypes'
-export { ElementPropTypes } from './prop-types/ElementPropTypes'
-export { IdPropTypes } from './prop-types/IdPropTypes'
 export { PropsAvailablePropTypes } from './prop-types/PropsAvailablePropTypes'
-export { RolePropTypes } from './prop-types/RolePropTypes'
 export { SharedPropsPropTypes } from './prop-types/SharedPropsPropTypes'
 
 /* Variables */
