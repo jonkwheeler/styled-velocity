@@ -10,4 +10,5 @@ export const Section = ({ className, children, element, gridLines, id, ...rest }
   </StyledSection>
 )
 
+// @ts-ignore
 Section.Item = StyledSectionItem

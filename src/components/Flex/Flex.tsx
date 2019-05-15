@@ -37,5 +37,8 @@ export const Flex = ({
     children,
   )
 
+// @ts-ignore
 Flex.Item = Box
+
+// @ts-ignore
 Flex.Box = Box
