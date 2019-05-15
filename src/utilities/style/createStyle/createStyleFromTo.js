@@ -23,8 +23,11 @@ export const createStyleFromTo = (
   fromToStyles = {},
   breakpoints = {
     mobile: 375,
+    400: 400,
     tablet: 768,
+    800: 800,
     desktop: 1440,
+    1600: 1600,
     super: 2000,
   },
 ) => {
