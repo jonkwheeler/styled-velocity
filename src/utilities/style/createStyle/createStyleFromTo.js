@@ -3,56 +3,45 @@ import { arrayOfKeys, px } from '@utils'
 /*
  * Created for the Text variants
 
-createStyleFromTo({
-	mobile: headline[500]['font-size'],
-	tablet: headline[800]['font-size'],
-	desktop: headline[1000]['font-size'],
-})
+createStyleFromTo({ '400': 24, '800': 64, '1600': 104 })
 
 generates an object
 
-{
-	0: "24px"
-	375-767: {min: 24, max: 64}
-	768-1439: {min: 64, max: 104}
-	1440: "104px"
-}
- */
+{ '0': '24px', '400-799': { min: 24, max: 64 }, '800-1599': { min: 64, max: 104 }, '1600': '104px' }
 
-export const createStyleFromTo = (
-  fromToStyles = {},
-  breakpoints = {
-    mobile: 375,
-    400: 400,
-    tablet: 768,
-    800: 800,
-    desktop: 1440,
-    1600: 1600,
-    super: 2000,
-  },
-) => {
+*/
+
+export const createStyleFromTo = (fromToStyles = {}) => {
   let style = {}
 
-  const keys = arrayOfKeys(fromToStyles)
+  const breakpoints = arrayOfKeys(fromToStyles)
 
-  keys.forEach(function(value, index) {
-    // create first
+  breakpoints.forEach(function(value, index) {
+    /*
+     * create first
+     */
     if (index === 0) {
-      style[0] = px(fromToStyles[keys[0]])
-      return // return here bc there is no previous breakpoint
+      style[0] = px(fromToStyles[breakpoints[0]])
+
+      /*
+       * return here bc there is no previous breakpoint
+       */
+      return
     }
 
-    const previousBreakpoint = keys[index - 1]
-    const currentBreakpoint = keys[index]
+    const previousBreakpoint = breakpoints[index - 1]
+    const currentBreakpoint = breakpoints[index]
 
-    // create last
-    if (index === keys.length - 1) {
-      style[breakpoints[currentBreakpoint]] = px(fromToStyles[keys[keys.length - 1]])
-    }
-
-    style[`${breakpoints[previousBreakpoint]}-${breakpoints[currentBreakpoint] - 1}`] = {
+    style[`${previousBreakpoint}-${currentBreakpoint - 1}`] = {
       min: fromToStyles[previousBreakpoint],
       max: fromToStyles[currentBreakpoint],
+    }
+
+    /*
+     * create last
+     */
+    if (index === breakpoints.length - 1) {
+      style[currentBreakpoint] = px(fromToStyles[currentBreakpoint])
     }
   })
 
