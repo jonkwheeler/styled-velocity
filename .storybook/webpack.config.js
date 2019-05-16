@@ -6,7 +6,6 @@ const tsPaths = tsconfig.compilerOptions.paths
 /*
 Convert tsconfig path
 {
-  '@eos/*': [ './src/components/*' ],
   '@storybook-helpers/*': [ '../.storybook/helpers/*' ]
 }
 
