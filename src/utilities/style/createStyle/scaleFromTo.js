@@ -1,7 +1,7 @@
 import { createStyleFromTo, isEmptyObject, arrayOfKeys, isArray } from '@utils'
 
 /*
- * Created for the Text variants
+ * Created for the Text scaling properties
 
 scaleFromTo({
   cssProperties: ['font-size', 'letter-spacing'],

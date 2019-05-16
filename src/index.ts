@@ -60,6 +60,7 @@ export { createStyleFromTo } from './utilities/style/createStyle/createStyleFrom
 export { cssProperty } from './utilities/style/createStyle/cssProperty'
 export { makeMediaQuery } from './utilities/style/createStyle/makeMediaQuery'
 export { scaleFromTo } from './utilities/style/createStyle/scaleFromTo'
+export { scaleProportionally } from './utilities/style/createStyle/scaleProportionally'
 export { scalePxValues } from './utilities/style/createStyle/scalePxValues'
 
 /* Config */
