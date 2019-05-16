@@ -1,4 +1,4 @@
-import { createStyleFromTo, isEmptyObject, arrayOfKeys } from '@utils'
+import { createStyleFromTo, isEmptyObject, arrayOfKeys, isArray } from '@utils'
 
 /*
  * Created for the Text variants
@@ -29,7 +29,7 @@ generates an object
 
 export const scaleFromTo = ({ cssProperties = null, scale = {} }) => {
   if (!cssProperties || isEmptyObject(scale)) return
-  const cssPropertiesArr = [...cssProperties]
+  const cssPropertiesArr = isArray(cssProperties) ? cssProperties : [cssProperties]
   const breakpoints = arrayOfKeys(scale)
   let styleProperties = {}
 
