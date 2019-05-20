@@ -21,6 +21,10 @@ export const textPropsAvailable = [
     conversionType: 'percentageOrPixel',
   },
   {
+    prop: 'fontStyle',
+    property: 'font-style',
+  },
+  {
     prop: 'fontWeight',
     property: 'font-weight',
   },

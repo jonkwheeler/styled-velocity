@@ -84,6 +84,7 @@ export interface SharedPropsPropTypes {
   textTransform?: string | object
   fontFamily?: string | object
   fontSize?: string | number | object
+  fontStyle?: string | object
   fontWeight?: string | number | object
   lineHeight?: string | number | object
 }
