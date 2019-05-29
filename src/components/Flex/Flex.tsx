@@ -12,7 +12,7 @@ const defaultProps: FlexProps = {
   wrap: 'wrap',
 }
 
-const Flex: React.FunctionComponent<FlexProps> & { defaultProps: Partial<FlexProps> } = ({
+const Flex: React.FunctionComponent<FlexProps> & { defaultProps: Partial<FlexProps>; Item: any; Box: any } = ({
   align,
   autoWidthColumns,
   children,
@@ -46,10 +46,7 @@ const Flex: React.FunctionComponent<FlexProps> & { defaultProps: Partial<FlexPro
     children,
   )
 
-// @ts-ignore
 Flex.Item = Box
-
-// @ts-ignore
 Flex.Box = Box
 
 Flex.defaultProps = defaultProps
