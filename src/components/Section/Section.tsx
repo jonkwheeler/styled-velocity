@@ -2,7 +2,7 @@ import * as React from 'react'
 import { SectionProps } from './props'
 import { StyledSection, StyledSectionItem } from './styled'
 
-export const Section = ({ className, children, element, gridLines, id, ...rest }: SectionProps) => (
+const Section: React.FunctionComponent<SectionProps> = ({ className, children, element, gridLines, id, ...rest }) => (
   <StyledSection id={id} className={className} as={element} {...rest}>
     <StyledSectionItem className={'section-item'} gridLines={gridLines}>
       {children}
@@ -12,3 +12,5 @@ export const Section = ({ className, children, element, gridLines, id, ...rest }
 
 // @ts-ignore
 Section.Item = StyledSectionItem
+
+export { Section }

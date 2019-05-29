@@ -3,19 +3,28 @@ import { Box } from './Box'
 import { FlexProps } from './props'
 import { StyledFlex } from './styled'
 
-export const Flex = ({
-  align = 'left',
-  autoWidthColumns = false,
+const defaultProps: FlexProps = {
+  align: 'left',
+  autoWidthColumns: false,
+  direction: 'row',
+  element: 'div',
+  valign: 'top',
+  wrap: 'wrap',
+}
+
+const Flex: React.FunctionComponent<FlexProps> & { defaultProps: Partial<FlexProps> } = ({
+  align,
+  autoWidthColumns,
   children,
   className,
   columns,
-  direction = 'row',
-  element = 'div',
-  valign = 'top',
+  direction,
+  element,
+  valign,
   valignContent,
-  wrap = 'wrap',
+  wrap,
   ...rest
-}: FlexProps) =>
+}) =>
   React.createElement(
     StyledFlex,
     {
@@ -42,3 +51,7 @@ Flex.Item = Box
 
 // @ts-ignore
 Flex.Box = Box
+
+Flex.defaultProps = defaultProps
+
+export { Flex }
