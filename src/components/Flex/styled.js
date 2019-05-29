@@ -10,6 +10,7 @@ import {
   gridLines,
   growShrinkProps,
   textProps,
+  positionProps,
 } from '@sharedProps'
 
 /* Flexbox is 1 dimensional (row), Grid is 2 dimensional (row, column) */
@@ -36,11 +37,12 @@ export const StyledFlex = styled.div`
       createStyle({ property: 'flex-basis', value: convertValue(props.columns, 'getColumnWidth') })};
   }
 
-  ${gridLines};
-  ${displayMode};
   ${appearanceProps};
   ${dimensionProps};
-  ${flexProps};
   ${textProps};
+  ${flexProps};
+  ${gridLines};
+  ${displayMode};
+  ${positionProps};
   ${cssProps};
 `
