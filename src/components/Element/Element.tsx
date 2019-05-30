@@ -15,5 +15,6 @@ const Element: React.FunctionComponent<ElementProps> & { defaultProps: Partial<E
 )
 
 Element.defaultProps = defaultProps
+Element.displayName = 'Element'
 
 export { Element }

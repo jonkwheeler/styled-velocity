@@ -13,5 +13,6 @@ const Section: React.FunctionComponent<SectionProps> & { Item: any } = React.for
 )
 
 Section.Item = StyledSectionItem
+Section.displayName = 'Section'
 
 export { Section }

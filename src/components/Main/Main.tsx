@@ -16,5 +16,6 @@ const Main: React.FunctionComponent<MainProps> & { defaultProps: Partial<MainPro
 )
 
 Main.defaultProps = defaultProps
+Main.displayName = 'Main'
 
 export { Main }

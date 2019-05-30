@@ -48,5 +48,6 @@ Flex.Item = Box
 Flex.Box = Box
 
 Flex.defaultProps = defaultProps
+Flex.displayName = 'Flex'
 
 export { Flex }

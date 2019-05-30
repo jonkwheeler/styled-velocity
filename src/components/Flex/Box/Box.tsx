@@ -15,5 +15,6 @@ const Box: React.FunctionComponent<BoxProps> & { defaultProps: Partial<BoxProps>
 )
 
 Box.defaultProps = defaultProps
+Box.displayName = 'Box'
 
 export { Box }
