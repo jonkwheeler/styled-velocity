@@ -6,15 +6,12 @@ const defaultProps: BoxProps = {
   element: 'div',
 }
 
-const Box: React.FunctionComponent<BoxProps> & { defaultProps: Partial<BoxProps> } = ({
-  element,
-  children,
-  className,
-  ...rest
-}) => (
-  <StyledFlexBox className={className} as={element} {...rest}>
-    {children}
-  </StyledFlexBox>
+const Box: React.FunctionComponent<BoxProps> & { defaultProps: Partial<BoxProps> } = React.forwardRef(
+  ({ element, children, className, ...rest }, ref) => (
+    <StyledFlexBox className={className} as={element} ref={ref} {...rest}>
+      {children}
+    </StyledFlexBox>
+  ),
 )
 
 Box.defaultProps = defaultProps

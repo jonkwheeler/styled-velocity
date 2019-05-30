@@ -12,39 +12,37 @@ const defaultProps: FlexProps = {
   wrap: 'wrap',
 }
 
-const Flex: React.FunctionComponent<FlexProps> & { defaultProps: Partial<FlexProps>; Item: any; Box: any } = ({
-  align,
-  autoWidthColumns,
-  children,
-  className,
-  columns,
-  direction,
-  element,
-  valign,
-  valignContent,
-  wrap,
-  ...rest
-}) =>
-  React.createElement(
-    StyledFlex,
-    {
-      as: element,
-      className,
-      align,
-      valign,
-      valignContent,
-      direction,
-      wrap,
-      itemCount: React.Children.count(children),
-      autoWidthColumns: columns === undefined && autoWidthColumns,
-      columns,
-      get columnCount() {
-        return this.autoWidthColumns ? this.itemCount : this.columns
+const Flex: React.FunctionComponent<FlexProps> & {
+  defaultProps: Partial<FlexProps>
+  Item: any
+  Box: any
+} = React.forwardRef(
+  (
+    { align, autoWidthColumns, children, className, columns, direction, element, valign, valignContent, wrap, ...rest },
+    ref,
+  ) =>
+    React.createElement(
+      StyledFlex,
+      {
+        as: element,
+        className,
+        align,
+        valign,
+        valignContent,
+        direction,
+        wrap,
+        itemCount: React.Children.count(children),
+        autoWidthColumns: columns === undefined && autoWidthColumns,
+        columns,
+        ref,
+        get columnCount() {
+          return this.autoWidthColumns ? this.itemCount : this.columns
+        },
+        ...rest,
       },
-      ...rest,
-    },
-    children,
-  )
+      children,
+    ),
+)
 
 Flex.Item = Box
 Flex.Box = Box

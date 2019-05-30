@@ -6,15 +6,12 @@ const defaultProps: ElementProps = {
   element: 'div',
 }
 
-const Element: React.FunctionComponent<ElementProps> & { defaultProps: Partial<ElementProps> } = ({
-  className,
-  children,
-  element,
-  ...rest
-}) => (
-  <StyledElement as={element} className={className} {...rest}>
-    {children}
-  </StyledElement>
+const Element: React.FunctionComponent<ElementProps> & { defaultProps: Partial<ElementProps> } = React.forwardRef(
+  ({ className, children, element, ...rest }, ref) => (
+    <StyledElement as={element} className={className} ref={ref} {...rest}>
+      {children}
+    </StyledElement>
+  ),
 )
 
 Element.defaultProps = defaultProps

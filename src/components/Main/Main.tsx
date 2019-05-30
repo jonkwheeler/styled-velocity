@@ -7,16 +7,12 @@ const defaultProps: MainProps = {
   role: 'main',
 }
 
-const Main: React.FunctionComponent<MainProps> & { defaultProps: Partial<MainProps> } = ({
-  className,
-  children,
-  id,
-  role,
-  ...rest
-}) => (
-  <Element element="main" role={role} id={id} className={className} position="relative" {...rest}>
-    {children}
-  </Element>
+const Main: React.FunctionComponent<MainProps> & { defaultProps: Partial<MainProps> } = React.forwardRef(
+  ({ className, children, id, role, ...rest }, ref) => (
+    <Element element="main" role={role} id={id} className={className} position="relative" ref={ref} {...rest}>
+      {children}
+    </Element>
+  ),
 )
 
 Main.defaultProps = defaultProps
