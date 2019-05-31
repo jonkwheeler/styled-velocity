@@ -1,9 +1,11 @@
 export interface SharedPropsPropTypes {
   bg?: string | object
   bgImage?: string | object
+  bgPosition?: string | object
   bgSize?: string | object
   borderRadius?: string | object
   boxShadow?: string | object
+  display?: string | object
   css?: string | object
   m?: string | number | object
   mt?: string | number | object

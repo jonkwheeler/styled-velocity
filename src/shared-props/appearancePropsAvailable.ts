@@ -8,6 +8,10 @@ export const appearancePropsAvailable = [
     property: 'background-image',
   },
   {
+    prop: 'bgPosition',
+    property: 'background-position',
+  },
+  {
     prop: 'bgSize',
     property: 'background-size',
   },
@@ -18,5 +22,9 @@ export const appearancePropsAvailable = [
   {
     prop: 'boxShadow',
     property: 'box-shadow',
+  },
+  {
+    prop: 'display',
+    property: 'display',
   },
 ]
