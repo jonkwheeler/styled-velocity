@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import { SharedPropsPropTypes } from '@propTypes'
 
-export interface MainProps extends SharedPropsPropTypes, React.HTMLAttributes {
+export interface MainProps extends SharedPropsPropTypes {
   children?: React.ReactNode
   className?: string
   element?: string
