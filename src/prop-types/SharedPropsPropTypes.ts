@@ -1,4 +1,8 @@
-export interface SharedPropsPropTypes {
+import { HTMLProps } from 'react'
+
+export type Omit<Type, Key extends keyof Type> = Pick<Type, Exclude<keyof Type, Key>>
+
+export interface SharedPropsPropTypes extends Omit<HTMLProps<HTMLDivElement>, 'color' | 'wrap'> {
   bg?: string | object
   bgImage?: string | object
   bgPosition?: string | object
