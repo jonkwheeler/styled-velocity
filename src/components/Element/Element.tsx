@@ -2,7 +2,7 @@ import { SharedPropsPropTypes } from '@propTypes'
 import * as React from 'react'
 import { StyledElement } from './styled'
 
-export interface ElementProps extends SharedPropsPropTypes, React.HTMLProps<HTMLElement> {
+export interface ElementProps extends SharedPropsPropTypes {
   /**
    * The children of the Section component.
    * @type React.ReactNode

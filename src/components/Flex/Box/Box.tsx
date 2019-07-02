@@ -2,7 +2,7 @@ import { SharedPropsPropTypes } from '@propTypes'
 import * as React from 'react'
 import { StyledFlexBox } from './styled'
 
-export interface BoxProps extends SharedPropsPropTypes, React.HTMLProps<HTMLElement> {
+export interface BoxProps extends SharedPropsPropTypes {
   /**
    * The children of the Flex.Box component (aka Flex.Item).
    * @type React.ReactNode

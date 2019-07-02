@@ -2,7 +2,7 @@ import { Element } from '@components'
 import { SharedPropsPropTypes } from '@propTypes'
 import * as React from 'react'
 
-export interface MainProps extends SharedPropsPropTypes, React.HTMLProps<HTMLElement> {
+export interface MainProps extends SharedPropsPropTypes {
   /**
    * The children of the Main component.
    * @type React.ReactNode
