@@ -1,6 +1,34 @@
 import { Element } from '@components'
+import { SharedPropsPropTypes } from '@propTypes'
 import * as React from 'react'
-import { MainProps } from './props'
+
+export interface MainProps extends SharedPropsPropTypes, React.HTMLProps<HTMLElement> {
+  /**
+   * The children of the Main component.
+   * @type React.ReactNode
+   */
+  children?: React.ReactNode
+
+  /**
+   * The className of the Main component.
+   * @type string
+   */
+  className?: string
+
+  /**
+   * The id of the Main component.
+   * @type string
+   * @defaultValue 'main'
+   */
+  id: string
+
+  /**
+   * The role of the Main component.
+   * @type string
+   * @defaultValue 'main'
+   */
+  role: string
+}
 
 const defaultProps: MainProps = {
   id: 'main',

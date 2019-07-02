@@ -1,7 +1,49 @@
+import { SharedPropsPropTypes } from '@propTypes'
 import * as React from 'react'
 import { Box } from './Box'
-import { FlexProps } from './props'
 import { StyledFlex } from './styled'
+
+export interface FlexProps extends SharedPropsPropTypes, React.HTMLProps<HTMLElement> {
+  /**
+   * The children of the Flex component.
+   * @type React.ReactNode
+   */
+  children?: React.ReactNode
+
+  /**
+   * The className of the Flex component.
+   * @type string
+   */
+  className?: string
+
+  /**
+   * Define the html element being output
+   * @type string
+   * @defaultValue 'div'
+   * @example
+   * element="div"
+   * element="span"
+   */
+  element?: string
+
+  /**
+   * The complimentary child component to <Flex>
+   * @example
+   * <Flex>
+   *   <Flex.Box>Sup</Flex.Box>
+   * </Flex>
+   */
+  Box?: any
+
+  /**
+   * The complimentary child component to <Flex>
+   * @example
+   * <Flex>
+   *   <Flex.Item>Sup</Flex.Item>
+   * </Flex>
+   */
+  Item?: any
+}
 
 const defaultProps: FlexProps = {
   align: 'left',
