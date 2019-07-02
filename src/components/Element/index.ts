@@ -1,1 +1,1 @@
-export { Element } from './Element'
+export { Element, ElementProps } from './Element'

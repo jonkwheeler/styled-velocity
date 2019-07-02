@@ -58,6 +58,7 @@ const Flex: React.FunctionComponent<FlexProps> & {
   defaultProps: Partial<FlexProps>
   Item: any
   Box: any
+  BoxProps: any
 } = React.forwardRef(
   (
     { align, autoWidthColumns, children, className, columns, direction, element, valign, valignContent, wrap, ...rest },

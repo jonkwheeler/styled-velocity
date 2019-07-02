@@ -21,7 +21,7 @@ function init() {
   const folders = [
     {
       title: 'Components',
-      files: glob.sync('./src/components/*').filter(removeUnwanted),
+      files: glob.sync('./src/components/**/*.{jsx,tsx}').filter(removeUnwanted),
     },
     {
       title: 'Shared props for styled-components',

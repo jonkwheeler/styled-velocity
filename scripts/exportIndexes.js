@@ -22,11 +22,11 @@ function init() {
     {
       title: '@components',
       files: glob
-        .sync('./src/components/*')
+        .sync('./src/components/**/*.{jsx,tsx}')
         .filter(removeUnwanted)
         .filter(item => !/sharedProps|propTypes/.test(item)),
       stringReturn: function(name, dir) {
-        return `export { ${name} } from '${dir.replace('/src/components', '')}/${name}'\n`
+        return `export { ${name}, ${name}Props } from '${dir.replace('/src/components', '')}/${name}'\n`
       },
       exportPath: './src/components/index.ts',
     },

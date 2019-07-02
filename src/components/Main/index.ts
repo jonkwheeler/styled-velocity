@@ -1,1 +1,1 @@
-export { Main } from './Main'
+export { Main, MainProps } from './Main'

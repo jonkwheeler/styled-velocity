@@ -3,10 +3,11 @@
 /* If it's not exported here, you can't import it via 'styled-velocity' */
 
 /* Components */
-export { Element } from './components/Element'
-export { Flex } from './components/Flex'
-export { Main } from './components/Main'
-export { Section } from './components/Section'
+export { Element } from './components/Element/Element'
+export { Box } from './components/Flex/Box/Box'
+export { Flex } from './components/Flex/Flex'
+export { Main } from './components/Main/Main'
+export { Section } from './components/Section/Section'
 
 /* Shared props for styled-components */
 export { appearanceProps } from './shared-props/appearanceProps'
