@@ -74,7 +74,7 @@
     "react-dom": "^16.8.6",
     "release-it": "^12.0.1",
     "storybook": "^1.0.0",
-    "styled-components": "^4.2.0",
+    "styled-components": "^5.0.0-beta.8",
     "ts-loader": "^6.0.0",
     "tscpaths": "^0.0.7",
     "tslint": "^5.16.0",
