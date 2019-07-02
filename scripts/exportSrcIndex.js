@@ -55,11 +55,17 @@ function init() {
       const dir = pathParse.dir
       const name = pathParse.name
 
+      let exportedName = name
+
+      if (title === 'Components') {
+        exportedName = `${name}, ${name}Props`
+      }
+
       if (index === 0) {
         srcIndexStr += `\n/* ${title} */\n`
       }
 
-      srcIndexStr += `export { ${name} } from '${dir.replace('/src', '')}/${name}'\n`
+      srcIndexStr += `export { ${exportedName} } from '${dir.replace('/src', '')}/${name}'\n`
     })
   })
   //eslint-disable-next-line
