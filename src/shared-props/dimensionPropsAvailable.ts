@@ -123,7 +123,7 @@ const cellPropsAvailable = [
   },
   {
     prop: 'mincw',
-    propertyTwo: 'min-width',
+    property: 'min-width',
     conversionType: 'getCells',
   },
   {
@@ -133,7 +133,7 @@ const cellPropsAvailable = [
   },
   {
     prop: 'maxcw',
-    propertyTwo: 'max-width',
+    property: 'max-width',
     conversionType: 'getCells',
   },
   {
