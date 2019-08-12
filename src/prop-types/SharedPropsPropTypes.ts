@@ -47,6 +47,16 @@ export interface SharedPropsPropTypes extends ReducedHTMLProps {
   bgSize?: string | object
 
   /**
+   * border
+   * @returns border css property
+   * @type string | object
+   * @example
+   * border='solid 1px black'
+   * border={{ 0: 'solid 1px black', 768: 'solid 2px black' }}
+   */
+  border?: string | object
+
+  /**
    * borderRadius
    * @returns border-radius css property
    * @type string | object
@@ -779,6 +789,16 @@ export interface SharedPropsPropTypes extends ReducedHTMLProps {
    * z={{ 0: 50, 768: 5 }}
    */
   z?: string | number | object
+
+  /**
+   * order
+   * @returns order css property
+   * @type string | number | object
+   * @example
+   * order={0}
+   * order={{ 0: 1, 768: -1 }}
+   */
+  order?: string | number | object
 
   /**
    * color

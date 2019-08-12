@@ -89,6 +89,10 @@ const layerPropsAvailable = [
     prop: 'z',
     property: 'z-index',
   },
+  {
+    prop: 'order',
+    property: 'order',
+  },
 ]
 
 export const positionPropsAvailable = [

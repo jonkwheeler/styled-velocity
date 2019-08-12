@@ -20,6 +20,10 @@ export const appearancePropsAvailable = [
     property: 'border-radius',
   },
   {
+    prop: 'border',
+    property: 'border',
+  },
+  {
     prop: 'boxShadow',
     property: 'box-shadow',
   },
