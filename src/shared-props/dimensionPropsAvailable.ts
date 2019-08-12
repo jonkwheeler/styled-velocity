@@ -122,6 +122,26 @@ const cellPropsAvailable = [
     conversionType: 'getCells',
   },
   {
+    prop: 'mincw',
+    propertyTwo: 'min-width',
+    conversionType: 'getCells',
+  },
+  {
+    prop: 'minch',
+    property: 'min-height',
+    conversionType: 'getCells',
+  },
+  {
+    prop: 'maxcw',
+    propertyTwo: 'max-width',
+    conversionType: 'getCells',
+  },
+  {
+    prop: 'maxch',
+    property: 'max-height',
+    conversionType: 'getCells',
+  },
+  {
     prop: 'cm',
     property: 'margin',
     conversionType: 'getCells',

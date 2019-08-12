@@ -355,6 +355,50 @@ export interface SharedPropsPropTypes extends ReducedHTMLProps {
   ch?: string | number | object
 
   /**
+   * mincw
+   * @returns min-cells wide (width)
+   * @type string | number | object
+   * @example
+   * mincw={5}
+   * mincw={{ 0: 10, 768: 8 }}
+   * mincw={{ 0: '50px', 768: 8 }}
+   */
+  mincw?: string | number | object
+
+  /**
+   * minch
+   * @returns min-cells tall (height)
+   * @type string | number | object
+   * @example
+   * minch={5}
+   * minch={{ 0: 10, 768: 8 }}
+   * minch={{ 0: '50px', 768: 8 }}
+   */
+  minch?: string | number | object
+
+  /**
+   * maxcw
+   * @returns max-cells wide (width)
+   * @type string | number | object
+   * @example
+   * maxcw={5}
+   * maxcw={{ 0: 10, 768: 8 }}
+   * maxcw={{ 0: '50px', 768: 8 }}
+   */
+  maxcw?: string | number | object
+
+  /**
+   * maxch
+   * @returns max-cells tall (height)
+   * @type string | number | object
+   * @example
+   * maxch={5}
+   * maxch={{ 0: 10, 768: 8 }}
+   * maxch={{ 0: '50px', 768: 8 }}
+   */
+  maxch?: string | number | object
+
+  /**
    * cm
    * @returns cells margin
    * @type string | number | object
