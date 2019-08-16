@@ -25,24 +25,6 @@ export interface FlexProps extends SharedPropsPropTypes, React.HTMLProps<HTMLEle
    * element="span"
    */
   element?: string
-
-  /**
-   * The complimentary child component to <Flex>
-   * @example
-   * <Flex>
-   *   <Flex.Box>Sup</Flex.Box>
-   * </Flex>
-   */
-  Box?: any
-
-  /**
-   * The complimentary child component to <Flex>
-   * @example
-   * <Flex>
-   *   <Flex.Item>Sup</Flex.Item>
-   * </Flex>
-   */
-  Item?: any
 }
 
 const defaultProps: FlexProps = {
@@ -56,8 +38,8 @@ const defaultProps: FlexProps = {
 
 const Flex: React.FunctionComponent<FlexProps> & {
   defaultProps: Partial<FlexProps>
-  Item: any
-  Box: any
+  Item: typeof Box
+  Box: typeof Box
   BoxProps: any
 } = React.forwardRef(
   (

@@ -8,6 +8,7 @@ import {
   displayMode,
   gridLines,
   gridProps,
+  flexProps,
   textProps,
   positionProps,
 } from '@sharedProps'
@@ -20,7 +21,10 @@ import {
 const StyledGrid = styled.div`
   position: relative;
   display: grid;
-  grid-template-columns: repeat(var(--grid-columns), var(--grid-cell-size));
+  grid-template-columns: repeat(
+    ${props => (props.gridColumns ? props.gridColumns : 'var(--grid-columns)')},
+    var(--grid-cell-size)
+  );
 
   > * {
     position: relative;
@@ -30,6 +34,7 @@ const StyledGrid = styled.div`
   ${appearanceProps};
   ${dimensionProps};
   ${textProps};
+  ${flexProps};
   ${gridLines};
   ${gridProps};
   ${displayMode};
@@ -39,11 +44,11 @@ const StyledGrid = styled.div`
 
 const GlobalGridStyle = createGlobalStyle`
   :root {
-    --grid-columns: ${props => (props.gridColumns ? props.gridColumns : 40)};
-    --grid-cell-size: ${props => 100 / (props.gridColumns ? props.gridColumns : 40)}vw;
+    --grid-columns: ${props => (props.gridColumnsRoot ? props.gridColumnsRoot : 40)};
+    --grid-cell-size: ${props => 100 / (props.gridColumnsRoot ? props.gridColumnsRoot : 40)}vw;
 
     @media(min-width: 2000px){
-      --grid-cell-size: ${props => 2000 / (props.gridColumns ? props.gridColumns : 40)}px;
+      --grid-cell-size: ${props => 2000 / (props.gridColumnsRoot ? props.gridColumnsRoot : 40)}px;
     }
   }
 `

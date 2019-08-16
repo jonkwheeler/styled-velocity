@@ -44,83 +44,124 @@ export const gridTemplateProps = [
 
 const gridCellProps = [
   {
-    prop: 'gcm',
+    prop: 'vc',
+    property: 'width',
+    propertyTwo: 'height',
+    conversionType: 'gridCells',
+  },
+  {
+    prop: 'vcw',
+    propertyTwo: 'width',
+    conversionType: 'gridCells',
+  },
+  {
+    prop: 'vch',
+    property: 'height',
+    conversionType: 'gridCells',
+  },
+  {
+    prop: 'vmincw',
+    property: 'min-width',
+    conversionType: 'gridCells',
+  },
+  {
+    prop: 'vminch',
+    property: 'min-height',
+    conversionType: 'gridCells',
+  },
+  {
+    prop: 'vmaxcw',
+    property: 'max-width',
+    conversionType: 'gridCells',
+  },
+  {
+    prop: 'vmaxch',
+    property: 'max-height',
+    conversionType: 'gridCells',
+  },
+  {
+    prop: 'vcm',
     property: 'margin',
     conversionType: 'gridCells',
   },
   {
-    prop: 'gcml',
+    prop: 'vcml',
     property: 'margin-left',
     conversionType: 'gridCells',
   },
   {
-    prop: 'gcmr',
+    prop: 'vcmr',
     property: 'margin-right',
     conversionType: 'gridCells',
   },
   {
-    prop: 'gcmx',
+    prop: 'vcmx',
     property: 'margin-left',
     propertyTwo: 'margin-right',
     conversionType: 'gridCells',
   },
   {
-    prop: 'gcmt',
+    prop: 'vcmt',
     property: 'margin-top',
     conversionType: 'gridCells',
   },
   {
-    prop: 'gcmb',
+    prop: 'vcmb',
     property: 'margin-bottom',
     conversionType: 'gridCells',
   },
   {
-    prop: 'gcmy',
+    prop: 'vcmy',
     property: 'margin-top',
     propertyTwo: 'margin-bottom',
     conversionType: 'gridCells',
   },
   {
-    prop: 'gcp',
+    prop: 'vcp',
     property: 'padding',
     conversionType: 'gridCells',
   },
   {
-    prop: 'gcpl',
+    prop: 'vcpl',
     property: 'padding-left',
     conversionType: 'gridCells',
   },
   {
-    prop: 'gcpr',
+    prop: 'vcpr',
     property: 'padding-right',
     conversionType: 'gridCells',
   },
   {
-    prop: 'gcpx',
+    prop: 'vcpx',
     property: 'padding-left',
     propertyTwo: 'padding-right',
     conversionType: 'gridCells',
   },
   {
-    prop: 'gcpt',
+    prop: 'vcpt',
     property: 'padding-top',
     conversionType: 'gridCells',
   },
   {
-    prop: 'gcpb',
+    prop: 'vcpb',
     property: 'padding-bottom',
     conversionType: 'gridCells',
   },
   {
-    prop: 'gcpy',
+    prop: 'vcpy',
     property: 'padding-top',
     propertyTwo: 'padding-bottom',
     conversionType: 'gridCells',
   },
   {
-    prop: 'gctransform',
+    prop: 'vctransform',
     property: 'transform',
     conversionType: 'getCellTranslate',
+  },
+  {
+    prop: 'gap',
+    property: 'grid-gap',
+    conversionType: 'gridCells',
   },
 ]
 

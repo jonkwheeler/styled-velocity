@@ -32,67 +32,27 @@ export interface GridProps extends SharedPropsPropTypes, React.HTMLProps<HTMLEle
    * @defaultValue 40
    * @example 40
    */
-  gridColumns?: number
-
-  /**
-   * The complimentary child component to <Grid>
-   * @example
-   * <Grid>
-   *   <Grid.Box>Sup</Grid.Box>
-   * </Grid>
-   */
-  Box?: any
-
-  /**
-   * The complimentary child component to <Grid>
-   * @example
-   * <Grid>
-   *   <Grid.Item>Sup</Grid.Item>
-   * </Grid>
-   */
-  Item?: any
+  gridColumnsRoot?: number
 }
 
 const defaultProps: GridProps = {
-  align: 'left',
-  autoWidthColumns: false,
-  direction: 'row',
   element: 'div',
-  valign: 'top',
-  wrap: 'wrap',
+  gridColumnsRoot: 40,
 }
 
 const Grid: React.FunctionComponent<GridProps> & {
   defaultProps: Partial<GridProps>
-  Item: any
-  Box: any
+  Item: typeof GridItem
+  Box: typeof GridItem
   BoxProps: any
-} = React.forwardRef(
-  (
-    {
-      align,
-      autoWidthColumns,
-      children,
-      className,
-      columns,
-      direction,
-      element,
-      gridColumns,
-      valign,
-      valignContent,
-      wrap,
-      ...rest
-    },
-    ref,
-  ) => (
-    <React.Fragment>
-      <StyledGrid ref={ref} {...rest}>
-        {children}
-      </StyledGrid>
-      <GlobalGridStyle gridColumns={gridColumns} />
-    </React.Fragment>
-  ),
-)
+} = React.forwardRef(({ children, element, gridColumnsRoot, ...rest }, ref) => (
+  <React.Fragment>
+    <StyledGrid ref={ref} as={element} {...rest}>
+      {children}
+    </StyledGrid>
+    <GlobalGridStyle gridColumnsRoot={gridColumnsRoot} />
+  </React.Fragment>
+))
 
 Grid.Item = GridItem
 Grid.Box = GridItem
