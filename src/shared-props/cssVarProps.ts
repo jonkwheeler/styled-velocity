@@ -14,7 +14,7 @@ export const cssVarProps = css`
       let style = createStyle({ property, value })
 
       /*
-       * See if there's a second or third prop, EG: gmx: grid margin-left and grid margin-right
+       * See if there's a second or third prop, EG: vcmx: var cells margin-left and var cells margin-right
        */
       if (propertyTwo) {
         style += createStyle({ property: propertyTwo, value })
