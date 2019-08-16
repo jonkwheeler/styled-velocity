@@ -1,7 +1,8 @@
 import { SharedPropsPropTypes } from '@propTypes'
+import { GlobalGridCssVars } from '@vars'
 import * as React from 'react'
 import { GridItem } from './GridItem'
-import { GlobalGridStyle, StyledGrid } from './styled'
+import { StyledGrid } from './styled'
 
 export interface GridProps extends SharedPropsPropTypes, React.HTMLProps<HTMLElement> {
   /**
@@ -50,7 +51,7 @@ const Grid: React.FunctionComponent<GridProps> & {
     <StyledGrid ref={ref} as={element} {...rest}>
       {children}
     </StyledGrid>
-    <GlobalGridStyle gridColumnsRoot={gridColumnsRoot} />
+    <GlobalGridCssVars gridColumnsRoot={gridColumnsRoot} />
   </React.Fragment>
 ))
 

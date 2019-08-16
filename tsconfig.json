@@ -34,6 +34,8 @@
       "@root/*": ["./*"],
       "@sharedProps": ["./src/shared-props"],
       "@sharedProps/*": ["./src/shared-props/*"],
+      "@vars": ["./src/variables"],
+      "@vars/*": ["./src/variables/*"],
       "@utils": ["./src/utilities"],
       "@utils/*": ["./src/utilities/*"]
     },

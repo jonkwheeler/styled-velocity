@@ -15,6 +15,8 @@ export { Section, SectionProps } from './components/Section/Section'
 export { appearanceProps } from './shared-props/appearanceProps'
 export { appearancePropsAvailable } from './shared-props/appearancePropsAvailable'
 export { cssProps } from './shared-props/cssProps'
+export { cssVarProps } from './shared-props/cssVarProps'
+export { cssVarPropsAvailable } from './shared-props/cssVarPropsAvailable'
 export { dimensionProps } from './shared-props/dimensionProps'
 export { dimensionPropsAvailable } from './shared-props/dimensionPropsAvailable'
 export { displayMode } from './shared-props/displayMode'
@@ -35,6 +37,7 @@ export { PropsAvailablePropTypes } from './prop-types/PropsAvailablePropTypes'
 export { SharedPropsPropTypes } from './prop-types/SharedPropsPropTypes'
 
 /* Variables */
+export { GlobalGridCssVars } from './variables/GlobalGridCssVars/GlobalGridCssVars'
 export { gridVars } from './variables/gridVars/gridVars'
 
 /* Utilities */

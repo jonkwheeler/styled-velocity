@@ -4,6 +4,7 @@ import {
   cssProps,
   dimensionProps,
   flexProps,
+  cssVarProps,
   gridProps,
   growShrinkProps,
   textProps,
@@ -15,6 +16,7 @@ export const StyledGridItem = styled.div`
   ${dimensionProps};
   ${flexProps};
   ${gridProps};
+  ${cssVarProps};
   ${growShrinkProps};
   ${textProps};
   ${cssProps};

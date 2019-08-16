@@ -1,5 +1,4 @@
-import styled, { createGlobalStyle } from 'styled-components'
-// import { createStyle, convertValue } from '@utils'
+import styled from 'styled-components'
 
 import {
   appearanceProps,
@@ -8,6 +7,7 @@ import {
   displayMode,
   gridLines,
   gridProps,
+  cssVarsProps,
   flexProps,
   textProps,
   positionProps,
@@ -35,6 +35,7 @@ const StyledGrid = styled.div`
   ${dimensionProps};
   ${textProps};
   ${flexProps};
+  ${cssVarsProps};
   ${gridLines};
   ${gridProps};
   ${displayMode};
@@ -42,15 +43,4 @@ const StyledGrid = styled.div`
   ${cssProps};
 `
 
-const GlobalGridStyle = createGlobalStyle`
-  :root {
-    --grid-columns: ${props => (props.gridColumnsRoot ? props.gridColumnsRoot : 40)};
-    --grid-cell-size: ${props => 100 / (props.gridColumnsRoot ? props.gridColumnsRoot : 40)}vw;
-
-    @media(min-width: 2000px){
-      --grid-cell-size: ${props => 2000 / (props.gridColumnsRoot ? props.gridColumnsRoot : 40)}px;
-    }
-  }
-`
-
-export { StyledGrid, GlobalGridStyle }
+export { StyledGrid }

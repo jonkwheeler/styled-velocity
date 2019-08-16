@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { appearanceProps, cssProps, dimensionProps, textProps, gridLines, displayMode } from '@sharedProps'
+import { appearanceProps, cssProps, cssVarProps, dimensionProps, textProps, gridLines, displayMode } from '@sharedProps'
 
 export const StyledSection = styled.section`
   width: 100%;
@@ -10,6 +10,7 @@ export const StyledSection = styled.section`
   ${dimensionProps};
   ${textProps};
   ${cssProps};
+  ${cssVarProps};
   ${displayMode};
 `
 

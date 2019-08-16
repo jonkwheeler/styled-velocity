@@ -16,6 +16,7 @@ export const StyledElement = styled.div`
   ${dimensionProps};
   ${textProps};
   ${flexProps};
+
   ${gridLines};
   ${displayMode};
   ${positionProps};

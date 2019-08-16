@@ -4,6 +4,8 @@
 export { appearanceProps } from './appearanceProps'
 export { appearancePropsAvailable } from './appearancePropsAvailable'
 export { cssProps } from './cssProps'
+export { cssVarProps } from './cssVarProps'
+export { cssVarPropsAvailable } from './cssVarPropsAvailable'
 export { dimensionProps } from './dimensionProps'
 export { dimensionPropsAvailable } from './dimensionPropsAvailable'
 export { displayMode } from './displayMode'
