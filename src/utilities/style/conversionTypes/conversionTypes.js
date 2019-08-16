@@ -31,6 +31,14 @@ export const getCellTranslate = ({ x, y }) =>
 
 export const toCellsMax = val => val * 50 + 'px'
 
+export const gridTemplateRows = value => `repeat(${value}, var(--grid-cell-size))`
+export const gridSpan = value => `span ${value}`
+export const gridMeasurement = value => value + 1
+export const gridCells = value => `calc(var(--grid-cell-size) * ${value})`
+
+export const gridCellTranslate = ({ x, y }) =>
+  `translate(${x ? (isString(x) ? x : gridCells(x)) : 0}, ${y ? (isString(y) ? y : gridCells(y)) : 0})`
+
 /*
  * Check for the correct type first
  */
@@ -41,4 +49,9 @@ export const conversionTypes = {
   getFlexProperty: value => (isString(value) ? getFlexProperty(value) : value),
   percentageOrPixel: value => (isNumber(value) ? percentageOrPixel(value) : value),
   getCellTranslate: getCellTranslate,
+  gridTemplateRows: gridTemplateRows,
+  gridSpan: gridSpan,
+  gridMeasurement: gridMeasurement,
+  gridCells: gridCells,
+  gridCellTranslate: gridCellTranslate,
 }

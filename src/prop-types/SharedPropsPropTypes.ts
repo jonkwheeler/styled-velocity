@@ -16,6 +16,16 @@ export interface SharedPropsPropTypes extends ReducedHTMLProps {
   bg?: string | object
 
   /**
+   * bgColor
+   * @returns background-color css property
+   * @type string | object
+   * @example
+   * bg='red'
+   * bg={{ 0: 'red', 768: 'blue' }}
+   */
+  bgColor?: string | object
+
+  /**
    * bgImage
    * @returns background-image css property
    * @type string | object
@@ -923,4 +933,14 @@ export interface SharedPropsPropTypes extends ReducedHTMLProps {
    * lineHeight={{ 0: '2.5', 768: '2' }}
    */
   lineHeight?: string | number | object
+
+  /**
+   * gridRows
+   * @returns grid-template-rows: repeat(${ value }, var(--grid-cell-size))
+   * @type string | number | object
+   * @example
+   * gridRows={5}
+   * gridRows={{ 0: 10, 768: 8 }}
+   */
+  gridRows?: number | object
 }

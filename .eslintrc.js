@@ -2,7 +2,7 @@ module.exports = {
   env: {
     browser: true,
     commonjs: true,
-    es6: true
+    es6: true,
   },
   parser: 'babel-eslint',
   parserOptions: {
@@ -11,8 +11,8 @@ module.exports = {
     ecmaFeatures: {
       jsx: true,
       modules: true,
-      experimentalObjectRestSpread: true
-    }
+      experimentalObjectRestSpread: true,
+    },
   },
   extends: ['eslint:recommended', 'plugin:react/recommended'],
   plugins: ['react'],
@@ -20,6 +20,6 @@ module.exports = {
     indent: ['error', 2],
     'linebreak-style': ['error', 'unix'],
     quotes: ['error', 'single'],
-    semi: ['error', 'never']
-  }
+    semi: ['error', 'never'],
+  },
 }

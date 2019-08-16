@@ -4,6 +4,10 @@ export const appearancePropsAvailable = [
     property: 'background',
   },
   {
+    prop: 'bgColor',
+    property: 'background-color',
+  },
+  {
     prop: 'bgImage',
     property: 'background-image',
   },
