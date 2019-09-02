@@ -4,7 +4,7 @@ import * as React from 'react'
 import { GridItem } from './GridItem'
 import { StyledGrid } from './styled'
 
-export interface GridProps extends SharedPropsPropTypes, React.HTMLProps<HTMLElement> {
+export interface GridProps extends SharedPropsPropTypes {
   /**
    * The children of the Grid component.
    * @type React.ReactNode

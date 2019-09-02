@@ -1,7 +1,9 @@
 {
   "extends": "./tsconfig",
   "compilerOptions": {
-    "module": "amd",
+    "module": "commonjs",
+    "rootDir": "./src",
+    "outDir": "dist/commonjs",
     "declaration": true,
     "declarationMap": false,
     "isolatedModules": false,

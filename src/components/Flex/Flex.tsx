@@ -3,7 +3,7 @@ import * as React from 'react'
 import { Box } from './Box'
 import { StyledFlex } from './styled'
 
-export interface FlexProps extends SharedPropsPropTypes, React.HTMLProps<HTMLElement> {
+export interface FlexProps extends SharedPropsPropTypes {
   /**
    * The children of the Flex component.
    * @type React.ReactNode
