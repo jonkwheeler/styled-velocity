@@ -28,6 +28,14 @@ export interface GridProps extends SharedPropsPropTypes {
   element?: string
 
   /**
+   * Pass a ref to the Styled-Component
+   * @example
+   * const myRef = React.createRef();
+   * <Grid forwardRef={myRef} />
+   */
+  forwardRef?: any
+
+  /**
    * Define the number of grid columns
    * @type number
    * @defaultValue 40
@@ -45,15 +53,14 @@ const Grid: React.FunctionComponent<GridProps> & {
   defaultProps: Partial<GridProps>
   Item: typeof GridItem
   Box: typeof GridItem
-  BoxProps: any
-} = React.forwardRef(({ children, element, gridColumnsRoot, ...rest }, ref) => (
+} = ({ children, element, forwardRef, gridColumnsRoot, ...rest }) => (
   <React.Fragment>
-    <StyledGrid ref={ref} as={element} {...rest}>
+    <StyledGrid ref={forwardRef} as={element} {...rest}>
       {children}
     </StyledGrid>
     <GlobalGridCssVars gridColumnsRoot={gridColumnsRoot} />
   </React.Fragment>
-))
+)
 
 Grid.Item = GridItem
 Grid.Box = GridItem

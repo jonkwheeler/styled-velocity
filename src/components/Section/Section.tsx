@@ -26,10 +26,18 @@ export interface SectionProps extends SharedPropsPropTypes {
   element?: string
 
   /**
+   * Pass a ref to the Styled-Component
+   * @example
+   * const myRef = React.createRef();
+   * <Section forwardRef={myRef} />
+   */
+  forwardRef?: any
+
+  /**
    * The id of the Section component.
    * @type string
    */
-  id: string
+  id?: string
 }
 
 const defaultProps: Partial<SectionProps> = {
@@ -39,13 +47,13 @@ const defaultProps: Partial<SectionProps> = {
 const Section: React.FunctionComponent<SectionProps> & {
   defaultProps: Partial<SectionProps>
   Item: any
-} = React.forwardRef(({ className, children, element, gridLines, id, ...rest }, ref) => (
-  <StyledSection id={id} className={className} as={element} ref={ref} {...rest}>
-    <StyledSectionItem className={'section-item'} gridLines={gridLines}>
+} = ({ className, children, element, forwardRef, gridLines, id, ...rest }) => (
+  <StyledSection id={id} className={className} as={element} ref={forwardRef} {...rest}>
+    <StyledSectionItem className="section-item" gridLines={gridLines}>
       {children}
     </StyledSectionItem>
   </StyledSection>
-))
+)
 
 Section.Item = StyledSectionItem
 Section.defaultProps = defaultProps

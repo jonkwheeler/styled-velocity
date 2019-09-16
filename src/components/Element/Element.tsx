@@ -26,6 +26,14 @@ export interface ElementProps extends SharedPropsPropTypes {
   element?: string
 
   /**
+   * Pass a ref to the Styled-Component
+   * @example
+   * const myRef = React.createRef();
+   * <Element forwardRef={myRef} />
+   */
+  forwardRef?: any
+
+  /**
    * The id of the Element component.
    * @type string
    */
@@ -36,12 +44,16 @@ const defaultProps: ElementProps = {
   element: 'div',
 }
 
-const Element: React.FunctionComponent<ElementProps> & { defaultProps: Partial<ElementProps> } = React.forwardRef(
-  ({ className, children, element, ...rest }, ref) => (
-    <StyledElement as={element} className={className} ref={ref} {...rest}>
-      {children}
-    </StyledElement>
-  ),
+const Element: React.FunctionComponent<ElementProps> & { defaultProps: Partial<ElementProps> } = ({
+  className,
+  children,
+  element,
+  forwardRef,
+  ...rest
+}) => (
+  <StyledElement as={element} className={className} ref={forwardRef} {...rest}>
+    {children}
+  </StyledElement>
 )
 
 Element.defaultProps = defaultProps

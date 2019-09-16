@@ -81,7 +81,7 @@
     "react-dom": "^16.8.6",
     "release-it": "^12.3.3",
     "storybook": "^1.0.0",
-    "styled-components": "^5.0.0-beta.8",
+    "styled-components": ">= 4",
     "ts-loader": "^6.0.4",
     "tscpaths": "^0.0.9",
     "tslint": "^5.18.0",
@@ -91,6 +91,8 @@
     "webpack": "^4.35.3"
   },
   "peerDependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "styled-components": ">= 4"
   },
   "bugs": {

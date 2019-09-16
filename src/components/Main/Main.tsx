@@ -16,6 +16,14 @@ export interface MainProps extends SharedPropsPropTypes {
   className?: string
 
   /**
+   * Pass a ref to the Styled-Component
+   * @example
+   * const myRef = React.createRef();
+   * <Main forwardRef={myRef} />
+   */
+  forwardRef?: any
+
+  /**
    * The id of the Main component.
    * @type string
    * @defaultValue 'main'
@@ -35,12 +43,17 @@ const defaultProps: MainProps = {
   role: 'main',
 }
 
-const Main: React.FunctionComponent<MainProps> & { defaultProps: Partial<MainProps> } = React.forwardRef(
-  ({ className, children, id, role, ...rest }, ref) => (
-    <Element element="main" role={role} id={id} className={className} position="relative" ref={ref} {...rest}>
-      {children}
-    </Element>
-  ),
+const Main: React.FunctionComponent<MainProps> & { defaultProps: Partial<MainProps> } = ({
+  className,
+  children,
+  forwardRef,
+  id,
+  role,
+  ...rest
+}) => (
+  <Element element="main" role={role} id={id} className={className} position="relative" ref={forwardRef} {...rest}>
+    {children}
+  </Element>
 )
 
 Main.defaultProps = defaultProps

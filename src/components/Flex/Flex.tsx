@@ -25,6 +25,14 @@ export interface FlexProps extends SharedPropsPropTypes {
    * element="span"
    */
   element?: string
+
+  /**
+   * Pass a ref to the Styled-Component
+   * @example
+   * const myRef = React.createRef();
+   * <Flex forwardRef={myRef} />
+   */
+  forwardRef?: any
 }
 
 const defaultProps: FlexProps = {
@@ -40,34 +48,41 @@ const Flex: React.FunctionComponent<FlexProps> & {
   defaultProps: Partial<FlexProps>
   Item: typeof Box
   Box: typeof Box
-  BoxProps: any
-} = React.forwardRef(
-  (
-    { align, autoWidthColumns, children, className, columns, direction, element, valign, valignContent, wrap, ...rest },
-    ref,
-  ) =>
-    React.createElement(
-      StyledFlex,
-      {
-        as: element,
-        className,
-        align,
-        valign,
-        valignContent,
-        direction,
-        wrap,
-        itemCount: React.Children.count(children),
-        autoWidthColumns: columns === undefined && autoWidthColumns,
-        columns,
-        ref,
-        get columnCount() {
-          return this.autoWidthColumns ? this.itemCount : this.columns
-        },
-        ...rest,
+} = ({
+  align,
+  autoWidthColumns,
+  children,
+  className,
+  columns,
+  direction,
+  element,
+  forwardRef,
+  valign,
+  valignContent,
+  wrap,
+  ...rest
+}) =>
+  React.createElement(
+    StyledFlex,
+    {
+      as: element,
+      className,
+      align,
+      valign,
+      valignContent,
+      direction,
+      wrap,
+      itemCount: React.Children.count(children),
+      autoWidthColumns: columns === undefined && autoWidthColumns,
+      columns,
+      ref: forwardRef,
+      get columnCount() {
+        return this.autoWidthColumns ? this.itemCount : this.columns
       },
-      children,
-    ),
-)
+      ...rest,
+    },
+    children,
+  )
 
 Flex.Item = Box
 Flex.Box = Box

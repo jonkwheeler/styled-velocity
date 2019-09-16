@@ -24,18 +24,30 @@ export interface GridItemProps extends SharedPropsPropTypes {
    * element="span"
    */
   element?: string
+
+  /**
+   * Pass a ref to the Styled-Component
+   * @example
+   * const myRef = React.createRef();
+   * <GridItem forwardRef={myRef} />
+   */
+  forwardRef?: any
 }
 
 const defaultProps: GridItemProps = {
   element: 'div',
 }
 
-const GridItem: React.FunctionComponent<GridItemProps> & { defaultProps: Partial<GridItemProps> } = React.forwardRef(
-  ({ element, children, className, ...rest }, ref) => (
-    <StyledGridItem className={className} as={element} ref={ref} {...rest}>
-      {children}
-    </StyledGridItem>
-  ),
+const GridItem: React.FunctionComponent<GridItemProps> & { defaultProps: Partial<GridItemProps> } = ({
+  element,
+  children,
+  className,
+  forwardRef,
+  ...rest
+}) => (
+  <StyledGridItem className={className} as={element} ref={forwardRef} {...rest}>
+    {children}
+  </StyledGridItem>
 )
 
 GridItem.defaultProps = defaultProps

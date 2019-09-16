@@ -24,18 +24,30 @@ export interface BoxProps extends SharedPropsPropTypes {
    * element="span"
    */
   element?: string
+
+  /**
+   * Pass a ref to the Styled-Component
+   * @example
+   * const myRef = React.createRef();
+   * <Box forwardRef={myRef} />
+   */
+  forwardRef?: any
 }
 
 const defaultProps: BoxProps = {
   element: 'div',
 }
 
-const Box: React.FunctionComponent<BoxProps> & { defaultProps: Partial<BoxProps> } = React.forwardRef(
-  ({ element, children, className, ...rest }, ref) => (
-    <StyledFlexBox className={className} as={element} ref={ref} {...rest}>
-      {children}
-    </StyledFlexBox>
-  ),
+const Box: React.FunctionComponent<BoxProps> & { defaultProps: Partial<BoxProps> } = ({
+  element,
+  children,
+  className,
+  forwardRef,
+  ...rest
+}) => (
+  <StyledFlexBox className={className} as={element} ref={forwardRef} {...rest}>
+    {children}
+  </StyledFlexBox>
 )
 
 Box.defaultProps = defaultProps
