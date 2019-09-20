@@ -1,17 +1,22 @@
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" />
-<link
-  type="text/css"
-  href="//cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.6.1/css/OverlayScrollbars.min.css"
-  rel="stylesheet"
-/>
-<script
-  type="text/javascript"
-  src="//cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.6.1/js/OverlayScrollbars.min.js"
-></script>
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    //The first argument are the elements to which the plugin shall be initialized
-    //The second argument has to be at least a empty object or a object with your desired options
-    OverlayScrollbars(document.querySelectorAll('body'), { scrollbars: { autoHide: 'move', clickScrolling: !0 } })
-  })
+  var rootStyle = document.documentElement.style;
+
+  function srcWidth() {
+    rootStyle.setProperty('--scr', (document.documentElement.clientWidth) + "px");
+  };
+  srcWidth();
+  window.addEventListener('resize', srcWidth, false);
 </script>
+<style>
+  :root {
+    --scr: 100vw;
+    --cel: calc(var(--scr, 100vw) / 40);
+  }
+
+  html {
+    overflow-x: hidden;
+  }
+</style>
+
+<!-- color: var(--my-var, red); /* Red if --my-var is not defined */ -->
