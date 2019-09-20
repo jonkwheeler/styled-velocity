@@ -24,8 +24,6 @@ export const dimensionProps = css`
          * See if there's a second or third prop, EG: mx: margin-left and margin-right
          */
 
-        console.log(properties)
-
         for (let propIdx = 0; propIdx < properties.length; propIdx++) {
           if (!isNullOrUndefined(properties[propIdx])) {
             /*
@@ -33,8 +31,6 @@ export const dimensionProps = css`
              */
             for (let fbIdx = 0; fbIdx < fallbacks.length; fbIdx++) {
               if (conversionType === fallbacks[fbIdx]) {
-                console.log(properties[propIdx])
-
                 style += createStyle({
                   property: properties[propIdx],
                   value: convertValue(props[prop], fallbacks[fbIdx] + 'Fallback'),
@@ -45,8 +41,6 @@ export const dimensionProps = css`
             style += createStyle({ property: properties[propIdx], value })
           }
         }
-
-        console.log(style)
 
         return style
       },
