@@ -10,19 +10,31 @@ export const positionProps = css`
         if (isNullOrUndefined(props[prop])) {
           return
         }
+
+        const properties = [property, propertyTwo, propertyThree]
         const value = conversionType ? convertValue(props[prop], conversionType) : props[prop]
 
-        let style = createStyle({ property, value })
+        let style = ''
 
         /*
          * See if there's a second or third prop, EG: mx: margin-left and margin-right
          */
-        if (propertyTwo) {
-          style += createStyle({ property: propertyTwo, value })
+        for (let index = 0; index < properties.length; index++) {
+          if (properties[index]) {
+            /*
+             * If we're converting cells, let's add a legit fallback
+             */
+            if (conversionType === 'getCells') {
+              style += createStyle({
+                property: properties[index],
+                value: convertValue(props[prop], 'getCellsFallback'),
+              })
+            }
+
+            style += createStyle({ property: properties[index], value })
+          }
         }
-        if (propertyThree) {
-          style += createStyle({ property: propertyThree, value })
-        }
+
         return style
       },
     )};

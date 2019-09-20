@@ -90,7 +90,7 @@ import { Element } 'styled-velocity'
 | ""                | `cpb`           | cells padding-bottom       | ""                 |
 | ""                | `cpx`           | `cpl` and `cpr`            | ""                 |
 | ""                | `cpy`           | `cpt` and `cpb`            | ""                 |
-| ""                | `ctransform`    | cells transform            | getCellTranslate   |
+| ""                | `ctransform`    | cells transform            | getCellsTranslate  |
 | `displayMode`     | `displayMode`   | outputs bounding box color |                    |
 | `flexProps`       | `direction`     | flex-direction             | getFlexProperty    |
 | ""                | `wrap`          | flex-wrap                  | ""                 |
@@ -219,9 +219,9 @@ Used for grow and shrink, if you pass `true`, it'll convert to `1` for css purpo
 
 This takes an `int` and converts it to the cells width (or height). Thus `cw={2}` makes the element 2 cells wide (based on your grid config).
 
-### getCellTranslate
+### getCellsTranslate
 
-Similar to `getCells`, but takes an object. `ctransform={{x: 0.5, y: 0}}` would offset the x coords of the element by 1/2 cells width.
+Similar to `getCells`, but takes an object. `ctransform={{ 0: {x: 0.5, y: 0} }}` would offset the x coords of the element by 1/2 cells width.
 
 ### getFlexProperty
 

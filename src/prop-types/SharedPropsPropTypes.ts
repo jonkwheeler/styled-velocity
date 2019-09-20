@@ -576,7 +576,10 @@ export interface SharedPropsPropTypes extends ReducedHTMLProps {
    * ctransform
    * @returns cells transform translate for x and y coords
    * @type object
-   * @example ctransform={{x: 0.5, y: 0}}
+   * @desc A breakpoint is required, even if it's "0"
+   * @example
+   * ctransform={{ 0: { x: 1, y: 3 } }}
+   * ctransform={{ 0: { x: 1, y: 3 }, 600: { x: 3, y: 6 } }}
    */
   ctransform?: object
 

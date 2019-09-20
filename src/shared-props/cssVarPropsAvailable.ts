@@ -112,6 +112,6 @@ export const cssVarPropsAvailable = [
   {
     prop: 'vctransform',
     property: 'transform',
-    conversionType: 'getCellTranslate',
+    conversionType: 'getCellsTranslate',
   },
 ]

@@ -31,11 +31,11 @@ export const convertValue = (value, conversionType) => {
     convertedValues['2000'] = toCellsMax(lastItem)
   }
 
-  if (conversionType === 'getCellTranslate' && !hasKey(convertedValues, '2000')) {
+  if (conversionType === 'getCellsTranslate' && !hasKey(convertedValues, '2000')) {
     const valuesArray = Object.values(value)
     const lastItem = valuesArray[valuesArray.length - 1]
 
-    convertedValues['2000'] = conversionTypes.getCellTranslate({ x: toCellsMax(lastItem.x), y: toCellsMax(lastItem.y) })
+    convertedValues['2000'] = conversionTypes.getCellsTranslate({ x: toCellsMax(lastItem.x), y: toCellsMax(lastItem.y) })
   }
 
   if (isObject(value)) {

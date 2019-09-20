@@ -2,9 +2,11 @@ export {
   booleanToIntString,
   conversionTypes,
   getCells,
-  toCellsMax,
-  getCellTranslate,
+  getCellsFallback,
+  getCellsTranslate,
+  getCellsTranslateFallback,
   getColumnWidth,
   getFlexProperty,
-  percentageOrPixel
+  percentageOrPixel,
+  toCellsMax,
 } from './conversionTypes'
