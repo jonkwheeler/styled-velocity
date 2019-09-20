@@ -32,22 +32,10 @@ export const getFlexProperty = property => {
   else return property
 }
 
-export const getCellTranslateFallback = ({ x, y }) =>
+export const getCellsTranslateFallback = ({ x, y }) =>
   `translate(${x ? (isString(x) ? x : getCellsFallback(x)) : 0}, ${y ? (isString(y) ? y : getCellsFallback(y)) : 0})`
 
-/*
-@media(min-width: 2000px){
-  transform: translate(NaNpx, NaNpx);
-}
-@media(min-width: xpx){
-  transform: translate(0, 0);
-}
-@media(min-width: ypx){
-  transform: translate(0, 0);
-}
-*/
-
-export const getCellTranslate = ({ x, y }) =>
+export const getCellsTranslate = ({ x, y }) =>
   `translate(${x ? (isString(x) ? x : getCells(x)) : 0}, ${y ? (isString(y) ? y : getCells(y)) : 0})`
 
 export const toCellsMax = val => val * 50 + 'px'
@@ -70,8 +58,8 @@ export const conversionTypes = {
   getCells: value => (isNumber(value) ? getCells(value) : value),
   getFlexProperty: value => (isString(value) ? getFlexProperty(value) : value),
   percentageOrPixel: value => (isNumber(value) ? percentageOrPixel(value) : value),
-  getCellTranslateFallback: getCellTranslateFallback,
-  getCellTranslate: getCellTranslate,
+  getCellsTranslateFallback: getCellsTranslateFallback,
+  getCellsTranslate: getCellsTranslate,
   gridTemplateRows: gridTemplateRows,
   gridSpan: gridSpan,
   gridMeasurement: gridMeasurement,

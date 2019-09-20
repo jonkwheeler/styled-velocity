@@ -15,6 +15,7 @@ export const dimensionProps = css`
         }
 
         const properties = [property, propertyTwo, propertyThree]
+        const fallbacks = ['getCells', 'getCellsTranslate']
         const value = conversionType ? convertValue(props[prop], conversionType) : props[prop]
 
         let style = ''
@@ -22,19 +23,26 @@ export const dimensionProps = css`
         /*
          * See if there's a second or third prop, EG: mx: margin-left and margin-right
          */
-        for (let index = 0; index < properties.length; index++) {
-          if (properties[index]) {
+
+        console.log(properties)
+
+        for (let propIdx = 0; propIdx < properties.length; propIdx++) {
+          if (!isNullOrUndefined(properties[propIdx])) {
             /*
              * If we're converting cells, let's add a legit fallback
              */
-            if (conversionType === 'getCells') {
-              style += createStyle({
-                property: properties[index],
-                value: convertValue(props[prop], 'getCellsFallback'),
-              })
+            for (let fbIdx = 0; fbIdx < fallbacks.length; fbIdx++) {
+              if (conversionType === fallbacks[fbIdx]) {
+                console.log(properties[propIdx])
+
+                style += createStyle({
+                  property: properties[propIdx],
+                  value: convertValue(props[prop], fallbacks[fbIdx] + 'Fallback'),
+                })
+              }
             }
 
-            style += createStyle({ property: properties[index], value })
+            style += createStyle({ property: properties[propIdx], value })
           }
         }
 

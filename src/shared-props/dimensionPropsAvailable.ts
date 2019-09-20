@@ -218,7 +218,7 @@ const cellPropsAvailable = [
   {
     prop: 'ctransform',
     property: 'transform',
-    conversionType: 'getCellTranslate',
+    conversionType: 'getCellsTranslate',
   },
 ]
 
