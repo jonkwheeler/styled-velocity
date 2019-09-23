@@ -5,12 +5,14 @@ import { css } from 'styled-components'
 
 export const growShrinkProps = css`
   ${props =>
-    growShrinkPropsAvailable.map(
-      ({ prop, property, conversionType }: PropsAvailablePropTypes) =>
-        props[prop] &&
-        createStyle({
-          property,
-          value: conversionType ? convertValue(props[prop], conversionType) : props[prop],
-        }),
-    )};
+    growShrinkPropsAvailable
+      .map(({ prop, property, conversionType }: PropsAvailablePropTypes) =>
+        props[prop]
+          ? createStyle({
+              property,
+              value: conversionType ? convertValue(props[prop], conversionType) : props[prop],
+            })
+          : null,
+      )
+      .filter(item => item !== null)};
 `
