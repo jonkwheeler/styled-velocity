@@ -9,7 +9,7 @@ storiesOf('Flex', module).add(
   'Example',
   () => (
     <div>
-      <Flex bgColor="lightgrey" displayMode>
+      <Flex bgColor="lightgrey" displayMode h={2000}>
         <Flex.Item bgColor="red" cw={20} ch={10} wrap={true}>
           Hello World
         </Flex.Item>

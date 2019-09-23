@@ -3,10 +3,19 @@
   var rootStyle = document.documentElement.style;
 
   function srcWidth() {
-    rootStyle.setProperty('--scr', (document.documentElement.clientWidth) + "px");
+    rootStyle.setProperty('--scr', "calc(100vw - " + (window.innerWidth - document.documentElement.clientWidth) +
+      "px)");
   };
   srcWidth();
-  window.addEventListener('resize', srcWidth, false);
+  var _time;
+  var _evts = ['resize', 'route-change-complete'];
+
+  _evts.forEach(function (e) {
+    window.addEventListener(e, function () {
+      clearTimeout(_time);
+      _time = setTimeout(srcWidth, 100);
+    }, false);
+  })
 </script>
 <style>
   :root {
