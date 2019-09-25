@@ -11,10 +11,10 @@ export const booleanToIntString = value => `${+value}`
   We need to achieve...
   
   width; 50vw; 
-  width: calc(var(--cel, 50vw) * 20);
+  width: calc(var(--cel, 2.5vw) * 20);
 */
 export const getCellsFallback = cells => `${parseFloat((cells * 2.5).toFixed(4))}vw`
-export const getCells = cells => `calc(var(--cel, ${getCellsFallback(cells)}) * ${cells})`
+export const getCells = cells => `calc(var(--cel, 2.5vw) * ${cells})`
 
 /*
  * if you entered 0, return 0, else
