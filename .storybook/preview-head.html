@@ -1,21 +1,25 @@
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" />
 <script>
-  var rootStyle = document.documentElement.style;
+  !(function() {
+    var rootStyle = document.documentElement.style
 
-  function srcWidth() {
-    rootStyle.setProperty('--scr', "calc(100vw - " + (window.innerWidth - document.documentElement.clientWidth) +
-      "px)");
-  };
-  srcWidth();
-  var _time;
-  var _evts = ['resize', 'route-change-complete'];
+    function srcWidth() {
+      rootStyle.setProperty(
+        '--scr',
+        'calc(100vw - ' + (window.innerWidth - document.documentElement.clientWidth) + 'px)',
+      )
+    }
+    document.addEventListener('DOMContentLoaded', srcWidth)
+    srcWidth()
+    var doit
 
-  _evts.forEach(function (e) {
-    window.addEventListener(e, function () {
-      clearTimeout(_time);
-      _time = setTimeout(srcWidth, 100);
-    }, false);
-  })
+    function run() {
+      clearTimeout(doit)
+      doit = setTimeout(srcWidth, 66)
+    }
+    window.addEventListener('resize', run, false)
+    window.addEventListener('route-change-complete', srcWidth, false)
+  })()
 </script>
 <style>
   :root {
