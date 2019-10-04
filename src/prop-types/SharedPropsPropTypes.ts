@@ -1,8 +1,10 @@
-import { HTMLProps } from 'react'
+import { HTMLAttributes, HTMLProps } from 'react'
 
 type Omit<Type, Key extends keyof Type> = Pick<Type, Exclude<keyof Type, Key>>
 
-type ReducedHTMLProps = Omit<HTMLProps<HTMLDivElement>, 'color' | 'wrap'>
+type PropsAndAttrs = HTMLAttributes<any> & HTMLProps<HTMLDivElement>
+
+type ReducedHTMLProps = Omit<PropsAndAttrs, 'color' | 'wrap'>
 
 export interface SharedPropsPropTypes extends ReducedHTMLProps {
   /**
