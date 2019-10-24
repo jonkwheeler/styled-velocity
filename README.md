@@ -241,7 +241,7 @@ Flex has some pretty unintuitive properties. For instance, `valign="top"` refers
 
 ## Polyfill
 
-In order to your this package on IE, you'll need a polyfill for `String.prototype.includes`. You can do this with loading a polyfill script from https://polyfill.io/, such as 
+In order to use this package on IE, you'll need a polyfill for `String.prototype.includes`. You can do this with loading a polyfill script from https://polyfill.io/, such as 
 
 ```<script src="https://polyfill.io/v3/polyfill.min.js?features=String.prototype.includes" async></script>```
 
