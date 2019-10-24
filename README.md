@@ -238,3 +238,60 @@ Flex has some pretty unintuitive properties. For instance, `valign="top"` refers
 | middle 	| center	|
 | center 	| center	|
 
+
+## Polyfill
+
+In order to your this package on IE, you'll need a polyfill for `String.prototype.includes`. You can do this with loading a polyfill script from https://polyfill.io/, such as 
+
+```<script src="https://polyfill.io/v3/polyfill.min.js?features=String.prototype.includes" async></script>```
+
+### Using Next.js?
+
+With Next.js you can load polyfills another way. See https://github.com/zeit/next.js/blob/canary/examples/with-polyfills/client/polyfills.js.
+
+Add following to `client/polyfills.js`
+
+~~~js
+/*
+ * This files runs at the very beginning (even before React and Next.js core)
+ * https://github.com/zeit/next.js/blob/canary/examples/with-polyfills/client/polyfills.js
+ */
+
+/* eslint no-extend-native: 0 */
+// core-js comes with Next.js. So, you can import it like below
+import stringIncludes from 'core-js/library/fn/string/virtual/includes'
+
+// Add your polyfills
+String.prototype.includes = stringIncludes
+~~~
+
+And then modify the `next.config.js`
+
+~~~js
+// next.config.js
+
+const nextConfig = {
+  webpack(config) {
+
+    /*
+     * Add polyfills
+     * https://github.com/zeit/next.js/blob/canary/examples/with-polyfills/next.config.js
+     */
+
+    const originalEntry = config.entry
+    config.entry = async () => {
+      const entries = await originalEntry()
+
+      if (entries['main.js'] && !entries['main.js'].includes('./client/polyfills.js')) {
+        entries['main.js'].unshift('./client/polyfills.js')
+      }
+
+      return entries
+    }
+
+    return config
+  },
+}
+
+module.exports = nextConfig
+~~~
