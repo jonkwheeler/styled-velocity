@@ -114,6 +114,36 @@ export interface SharedPropsPropTypes extends ReducedHTMLProps {
   css?: string
 
   /**
+   * darkCss
+   * @returns darkCss, [at]media (prefers-color-scheme: dark)
+   * @type string | template literal
+   * @example
+   * darkCss="margin: 100%;"
+   * darkCss={`
+   *    .child {color: red;}
+   * `}
+   * darkCss={`
+   *    [at]media (min-width: 10em) { color: blue; }
+   * `}
+   */
+  darkCss?: string
+
+  /**
+   * lightCss
+   * @returns lightCss, [at]media (prefers-color-scheme: light)
+   * @type string | template literal
+   * @example
+   * lightCss="margin: 100%;"
+   * lightCss={`
+   *    .child {color: red;}
+   * `}
+   * lightCss={`
+   *    [at]media (min-width: 10em) { color: blue; }
+   * `}
+   */
+  lightCss?: string
+
+  /**
    * m
    * @returns margin css property
    * @type string | number | object
