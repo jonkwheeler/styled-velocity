@@ -54,5 +54,9 @@ module.exports = {
         ],
       ],
     },
+    esm: {
+      presets: [['@babel/preset-env', { modules: false }]],
+      plugins: ['dynamic-import-node', ['@babel/plugin-transform-runtime', { useESModules: true }]],
+    },
   },
 }
