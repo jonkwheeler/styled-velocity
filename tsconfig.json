@@ -28,6 +28,8 @@
       "@components/*": ["./src/components/*"],
       "@config": ["./src/config"],
       "@config/*": ["./src/config/*"],
+      "@props": ["./src/props"],
+      "@props/*": ["./src/props/*"],
       "@propTypes": ["./src/prop-types"],
       "@propTypes/*": ["./src/prop-types/*"],
       "@root": ["./"],

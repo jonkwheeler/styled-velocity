@@ -7,3 +7,6 @@ export { Grid } from './Grid'
  */
 import { GridProps as _GridProps } from './Grid'
 export type GridProps = _GridProps
+
+import { GridItemProps as _GridItemProps } from './GridItem/GridItem'
+export type GridItemProps = _GridItemProps

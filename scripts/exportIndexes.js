@@ -26,7 +26,7 @@ function init() {
         .filter(removeUnwanted)
         .filter(item => !/sharedProps|propTypes/.test(item)),
       stringReturn: function(name, dir) {
-        return `export { ${name}, ${name}Props } from '${dir.replace('/src/components', '')}/${name}'\n`
+        return `export { ${name} } from '${dir.replace('/src/components', '')}/${name}'\n`
       },
       exportPath: './src/components/index.ts',
     },

@@ -7,3 +7,6 @@ export { Flex } from './Flex'
  */
 import { FlexProps as _FlexProps } from './Flex'
 export type FlexProps = _FlexProps
+
+import { BoxProps as _BoxProps } from './Box/Box'
+export type BoxProps = _BoxProps

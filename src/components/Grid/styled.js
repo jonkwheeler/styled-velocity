@@ -7,7 +7,7 @@ import {
   displayMode,
   gridLines,
   gridProps,
-  cssVarsProps,
+  cssVarProps,
   flexProps,
   textProps,
   positionProps,
@@ -35,7 +35,7 @@ const StyledGrid = styled.div`
   ${dimensionProps};
   ${textProps};
   ${flexProps};
-  ${cssVarsProps};
+  ${cssVarProps};
   ${gridLines};
   ${gridProps};
   ${displayMode};
