@@ -47,7 +47,7 @@ function init() {
 
   let srcIndexStr =
     disclaimer(filename) +
-    '/* These exports are what will be read by the \'styled-velocity\' module on npm. */\n/* If it\'s not exported here, you can\'t import it via \'styled-velocity\' */\n'
+    "/* These exports are what will be read by the 'styled-velocity' module on npm. */\n/* If it's not exported here, you can't import it via 'styled-velocity' */\n"
 
   folders.forEach(({ title, files }) => {
     files.forEach((entry, index) => {
@@ -57,9 +57,9 @@ function init() {
 
       let exportedName = name
 
-      if (title === 'Components') {
-        exportedName = `${name}, ${name}Props`
-      }
+      // if (title === 'Components') {
+      //   exportedName = name
+      // }
 
       if (index === 0) {
         srcIndexStr += `\n/* ${title} */\n`
@@ -68,6 +68,32 @@ function init() {
       srcIndexStr += `export { ${exportedName} } from '${dir.replace('/src', '')}/${name}'\n`
     })
   })
+
+  function commentTitle(title) {
+    return `\n/* ${title} */\n`
+  }
+
+  function addProps() {
+    let propsIndex = fs.readFileSync('./src/props/index.ts', 'utf8')
+    propsIndex = propsIndex
+      /*
+       * Remove multi-line comments, like these
+       */
+      .replace(/\/*(.|\n)*\*\//gm, '')
+      /*
+       * Change
+       * '../components/Element'
+       * to
+       * './components/Element'
+       */
+      .replace(/\.\.\//gm, './')
+      .trim()
+
+    srcIndexStr += commentTitle('Props') + propsIndex
+  }
+
+  addProps()
+
   //eslint-disable-next-line
   console.log('-- all files exported to ./src/index --')
   //eslint-disable-next-line

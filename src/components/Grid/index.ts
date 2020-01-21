@@ -5,5 +5,5 @@ export { Grid } from './Grid'
  * isolatedModules is needed for Babel.
  * Reference here: https://github.com/babel/babel-loader/issues/603#issuecomment-399293448
  */
-import { GridProps } from './Grid'
-export type GridProps = GridProps
+import { GridProps as _GridProps } from './Grid'
+export type GridProps = _GridProps

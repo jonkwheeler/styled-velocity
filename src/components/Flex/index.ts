@@ -5,5 +5,5 @@ export { Flex } from './Flex'
  * isolatedModules is needed for Babel.
  * Reference here: https://github.com/babel/babel-loader/issues/603#issuecomment-399293448
  */
-import { FlexProps } from './Flex'
-export type FlexProps = FlexProps
+import { FlexProps as _FlexProps } from './Flex'
+export type FlexProps = _FlexProps

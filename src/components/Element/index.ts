@@ -5,5 +5,5 @@ export { Element } from './Element'
  * isolatedModules is needed for Babel.
  * Reference here: https://github.com/babel/babel-loader/issues/603#issuecomment-399293448
  */
-import { ElementProps } from './Element'
-export type ElementProps = ElementProps
+import { ElementProps as _ElementProps } from './Element'
+export type ElementProps = _ElementProps

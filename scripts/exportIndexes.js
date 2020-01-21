@@ -55,6 +55,53 @@ function init() {
       exportPath: './src/shared-props/index.ts',
     },
     {
+      title: '@props',
+      files: glob.sync('./src/components/**/index.ts'),
+      stringReturn(name, dir, entry) {
+        // eslint-disable-next-line
+
+        /*
+         * Need to output the following example:
+         * import { MyType } from './a'
+         * export type MyType = MyType
+         */
+
+        const str = fs.readFileSync(entry, 'utf8')
+
+        if (!str.includes('export type')) {
+          return ''
+        }
+
+        const regex = /^export\stype\s(.*)\s=/gm
+        let m
+        const props = []
+
+        while ((m = regex.exec(str)) !== null) {
+          // This is necessary to avoid infinite loops with zero-width matches
+          if (m.index === regex.lastIndex) {
+            regex.lastIndex += 1
+          }
+
+          const type = m[1]
+          props.push(type)
+        }
+
+        return props.reduce((acc, prop) => {
+          return (acc += `import { ${prop} as _${prop} } from '${dir.replace(
+            '/src',
+            '.',
+          )}'\nexport type ${prop} = _${prop}\n`)
+        }, '')
+      },
+      exportPath: './src/props/index.ts',
+      extraDisclaimer: `
+/* Importing Type seperately is needed for export for the package build process. Do not remove.
+ * Getting the type requires cross file reference. isolatedModules prevents that.
+ * isolatedModules is needed for Babel.
+ * Reference here: https://github.com/babel/babel-loader/issues/603#issuecomment-399293448
+ */\n`,
+    },
+    {
       title: '@propTypes',
       files: glob.sync('./src/prop-types/*.{js,ts}').filter(removeUnwanted),
       stringReturn: function(name, dir) {
@@ -84,7 +131,7 @@ function init() {
         selfIndexStr += `\n/* ${title} */\n`
       }
 
-      selfIndexStr += stringReturn(name, dir)
+      selfIndexStr += stringReturn(name, dir, entry)
     })
     //eslint-disable-next-line
     fs.writeFileSync(path.join(process.cwd(), exportPath), selfIndexStr)

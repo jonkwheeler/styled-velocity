@@ -5,5 +5,5 @@ export { Section } from './Section'
  * isolatedModules is needed for Babel.
  * Reference here: https://github.com/babel/babel-loader/issues/603#issuecomment-399293448
  */
-import { SectionProps } from './Section'
-export type SectionProps = SectionProps
+import { SectionProps as _SectionProps } from './Section'
+export type SectionProps = _SectionProps

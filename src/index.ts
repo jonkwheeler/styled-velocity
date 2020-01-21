@@ -3,13 +3,13 @@
 /* If it's not exported here, you can't import it via 'styled-velocity' */
 
 /* Components */
-export { Element, ElementProps } from './components/Element/Element'
-export { Box, BoxProps } from './components/Flex/Box/Box'
-export { Flex, FlexProps } from './components/Flex/Flex'
-export { Grid, GridProps } from './components/Grid/Grid'
-export { GridItem, GridItemProps } from './components/Grid/GridItem/GridItem'
-export { Main, MainProps } from './components/Main/Main'
-export { Section, SectionProps } from './components/Section/Section'
+export { Element } from './components/Element/Element'
+export { Box } from './components/Flex/Box/Box'
+export { Flex } from './components/Flex/Flex'
+export { Grid } from './components/Grid/Grid'
+export { GridItem } from './components/Grid/GridItem/GridItem'
+export { Main } from './components/Main/Main'
+export { Section } from './components/Section/Section'
 
 /* Shared props for styled-components */
 export { appearanceProps } from './shared-props/appearanceProps'
@@ -74,3 +74,15 @@ export { scalePxValues } from './utilities/style/createStyle/scalePxValues'
 
 /* Config */
 export { config } from './config/config'
+
+/* Props */
+import { ElementProps as _ElementProps } from './components/Element'
+export type ElementProps = _ElementProps
+import { FlexProps as _FlexProps } from './components/Flex'
+export type FlexProps = _FlexProps
+import { GridProps as _GridProps } from './components/Grid'
+export type GridProps = _GridProps
+import { MainProps as _MainProps } from './components/Main'
+export type MainProps = _MainProps
+import { SectionProps as _SectionProps } from './components/Section'
+export type SectionProps = _SectionProps

@@ -5,5 +5,5 @@ export { Main } from './Main'
  * isolatedModules is needed for Babel.
  * Reference here: https://github.com/babel/babel-loader/issues/603#issuecomment-399293448
  */
-import { MainProps } from './Main'
-export type MainProps = MainProps
+import { MainProps as _MainProps } from './Main'
+export type MainProps = _MainProps
