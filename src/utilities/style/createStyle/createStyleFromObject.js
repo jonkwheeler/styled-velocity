@@ -9,7 +9,10 @@ export const returnStyle = (styleObject, cssProperty) => {
   })
 }
 
-export const createStyleFromObject = styleObject =>
-  Object.keys(styleObject)
+export const createStyleFromObject = (styleObject, join = false) => {
+  const value = Object.keys(styleObject)
     .map(cssProperty => returnStyle(styleObject, cssProperty))
     .join('')
+
+  return join ? value.join('') : value
+}
