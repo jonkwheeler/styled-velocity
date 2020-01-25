@@ -1,5 +1,13 @@
 import styled from 'styled-components'
-import { appearanceProps, cssProps, dimensionProps, flexProps, textProps, growShrinkProps } from '@sharedProps'
+import {
+  appearanceProps,
+  cssProps,
+  dimensionProps,
+  flexProps,
+  growShrinkProps,
+  positionProps,
+  textProps,
+} from '@sharedProps'
 import { createStyle, convertValue } from '@utils'
 
 export const StyledFlexBox = styled.div`
@@ -22,5 +30,6 @@ export const StyledFlexBox = styled.div`
   ${flexProps};
   ${growShrinkProps};
   ${textProps};
+  ${positionProps};
   ${cssProps};
 `

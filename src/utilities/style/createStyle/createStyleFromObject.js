@@ -10,4 +10,6 @@ export const returnStyle = (styleObject, cssProperty) => {
 }
 
 export const createStyleFromObject = styleObject =>
-  Object.keys(styleObject).map(cssProperty => returnStyle(styleObject, cssProperty))
+  Object.keys(styleObject)
+    .map(cssProperty => returnStyle(styleObject, cssProperty))
+    .join('')
