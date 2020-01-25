@@ -1,5 +1,5 @@
 import { createStyle } from './createStyle'
-import { snakeCase } from '@utils'
+import { snakeCase, isArray } from '@utils'
 
 export const returnStyle = (styleObject, cssProperty) => {
   return createStyle({
@@ -14,5 +14,5 @@ export const createStyleFromObject = (styleObject, join = false) => {
     .map(cssProperty => returnStyle(styleObject, cssProperty))
     .join('')
 
-  return join ? value.join('') : value
+  return join ? (isArray(value) ? value.join('') : value) : value
 }
