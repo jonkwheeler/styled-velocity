@@ -622,6 +622,14 @@ export interface SharedPropsPropTypes extends ReducedHTMLProps {
    */
   displayMode?: boolean
 
+
+  /**
+   * fullscreen
+   * @desc Make a fullscreen element
+   * @type boolean
+   */
+  fullscreen?: boolean
+
   /**
    * columns
    * @desc Number of columns in a flex container
