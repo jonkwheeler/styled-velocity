@@ -85,11 +85,11 @@
     "path": "^0.12.7",
     "prettier": "^2.1.2",
     "prop-types": "^15.7.2",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
     "release-it": "^12.3.3",
     "storybook": "^1.0.0",
-    "styled-components": ">= 4",
+    "styled-components": "^5.2.1",
     "ts-loader": "^6.1.1",
     "tsconfig-replace-paths": "^0.0.5",
     "tslint": "^5.18.0",
@@ -99,9 +99,9 @@
     "webpack": "^4.35.3"
   },
   "peerDependencies": {
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "styled-components": ">= 4"
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "styled-components": "^5.2.1"
   },
   "bugs": {
     "url": "https://github.com/jonkwheeler/styled-velocity/issues"
