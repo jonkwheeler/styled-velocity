@@ -37,7 +37,7 @@ export interface SectionProps extends SharedPropsPropTypes {
    * The id of the Section component.
    * @type string
    */
-  id?: string
+  id?: string | null
 }
 
 const defaultProps: Partial<SectionProps> = {
