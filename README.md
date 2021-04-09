@@ -5,13 +5,13 @@ Styled-Velocity, a React-based styled prop and UI library to increase your veloc
 ## Install
 
 ```js
-yarn add styled-velocity
+yarn add styled-velocity styled-components
 ```
 
 or
 
 ```js
-npm install styled-velocity
+npm install styled-velocity styled-components
 ```
 
 ## sharedProps
@@ -31,7 +31,7 @@ import { appearanceProps, cssProps, dimensionProps } from 'styled-velocity'
 Import example:
 
 ```js
-import { Element } 'styled-velocity'
+import { Element } from 'styled-velocity'
 ```
 
 - `Element` - [docs](https://github.com/jonkwheeler/styled-velocity/blob/master/src/components/Element/docs/element.md)
