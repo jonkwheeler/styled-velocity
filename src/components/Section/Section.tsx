@@ -3,6 +3,18 @@ import * as React from 'react'
 import { StyledSection, StyledSectionItem } from './styled'
 
 export interface SectionProps extends SharedPropsPropTypes {
+   /**
+   * The content after the section-item
+   * @type React.ReactNode
+   */
+    afterContent?: React.ReactNode
+
+    /**
+     * The content before the section-item
+     * @type React.ReactNode
+     */
+    beforeContent?: React.ReactNode
+
   /**
    * The children of the Section component.
    * @type React.ReactNode
@@ -47,11 +59,15 @@ const defaultProps: Partial<SectionProps> = {
 const Section: React.FunctionComponent<SectionProps> & {
   defaultProps: Partial<SectionProps>
   Item: any
-} = ({ className, children, element, forwardRef, gridLines, id, ...rest }) => (
+} = ({ afterContent, beforeContent, className, children, element, forwardRef, gridLines, id, ...rest }) => (
   <StyledSection id={id} className={className} as={element} ref={forwardRef} {...rest}>
+    {beforeContent}
+
     <StyledSectionItem className="section-item" gridLines={gridLines}>
       {children}
     </StyledSectionItem>
+
+    {afterContent}
   </StyledSection>
 )
 
