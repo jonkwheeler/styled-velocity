@@ -37,7 +37,7 @@ export interface ElementProps extends SharedPropsPropTypes {
    * The id of the Element component.
    * @type string
    */
-  id?: string
+  id?: string | null
 }
 
 const defaultProps: ElementProps = {
