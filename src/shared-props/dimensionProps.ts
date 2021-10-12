@@ -15,7 +15,6 @@ export const dimensionProps = css`
         }
 
         const properties = [property, propertyTwo, propertyThree]
-        const fallbacks = ['getCells', 'getCellsTranslate']
         const value = conversionType ? convertValue(props[prop], conversionType) : props[prop]
 
         let style = ''
@@ -26,18 +25,6 @@ export const dimensionProps = css`
 
         for (let propIdx = 0; propIdx < properties.length; propIdx++) {
           if (!isNullOrUndefined(properties[propIdx])) {
-            /*
-             * If we're converting cells, let's add a legit fallback
-             */
-            for (let fbIdx = 0; fbIdx < fallbacks.length; fbIdx++) {
-              if (conversionType === fallbacks[fbIdx]) {
-                style += createStyle({
-                  property: properties[propIdx],
-                  value: convertValue(props[prop], fallbacks[fbIdx] + 'Fallback'),
-                })
-              }
-            }
-
             style += createStyle({ property: properties[propIdx], value })
           }
         }

@@ -21,16 +21,6 @@ export const positionProps = css`
          */
         for (let index = 0; index < properties.length; index++) {
           if (properties[index]) {
-            /*
-             * If we're converting cells, let's add a legit fallback
-             */
-            if (conversionType === 'getCells') {
-              style += createStyle({
-                property: properties[index],
-                value: convertValue(props[prop], 'getCellsFallback'),
-              })
-            }
-
             style += createStyle({ property: properties[index], value })
           }
         }
