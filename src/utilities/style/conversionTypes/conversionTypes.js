@@ -10,10 +10,8 @@ export const booleanToIntString = value => `${+value}`
 /*
   We need to achieve...
   
-  width; 50vw; 
   width: calc(var(--cel, 2.5vw) * 20);
 */
-export const getCellsFallback = cells => `${parseFloat((cells * 2.5).toFixed(4))}vw`
 export const getCells = cells => `calc(var(--cel, 2.5vw) * ${cells})`
 
 /*
@@ -31,9 +29,6 @@ export const getFlexProperty = property => {
   else if (property === 'middle') return 'center'
   else return property
 }
-
-export const getCellsTranslateFallback = ({ x, y }) =>
-  `translate(${x ? (isString(x) ? x : getCellsFallback(x)) : 0}, ${y ? (isString(y) ? y : getCellsFallback(y)) : 0})`
 
 export const getCellsTranslate = ({ x, y }) =>
   `translate(${x ? (isString(x) ? x : getCells(x)) : 0}, ${y ? (isString(y) ? y : getCells(y)) : 0})`
@@ -54,11 +49,9 @@ export const gridCellTranslate = ({ x, y }) =>
 export const conversionTypes = {
   getColumnWidth: value => (isNumber(value) ? getColumnWidth(value) : value),
   booleanToIntString: value => (isBoolean(value) ? booleanToIntString(value) : value),
-  getCellsFallback: value => (isNumber(value) ? getCellsFallback(value) : value),
   getCells: value => (isNumber(value) ? getCells(value) : value),
   getFlexProperty: value => (isString(value) ? getFlexProperty(value) : value),
   percentageOrPixel: value => (isNumber(value) ? percentageOrPixel(value) : value),
-  getCellsTranslateFallback: getCellsTranslateFallback,
   getCellsTranslate: getCellsTranslate,
   gridTemplateRows: gridTemplateRows,
   gridSpan: gridSpan,
