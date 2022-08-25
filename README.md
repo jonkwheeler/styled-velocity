@@ -1,3 +1,7 @@
+# Tis a bit old 👴
+
+While you can still use this package, I recommend giving my `emotion` based package called [`styled-velocity-emotion`](https://github.com/jonkwheeler/styled-velocity-emotion) a shot. I'll update this one when I have time. It's smaller, faster, better.
+
 # Styled-Velocity
 
 Styled-Velocity, a React-based styled prop and UI library to increase your velocity and help build your Design System.
